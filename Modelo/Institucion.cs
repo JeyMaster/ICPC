@@ -10,9 +10,9 @@ namespace Modelo
 		public String NombreCompleto { get; set; }
 		public String NombreCorto { get; set; }
 		public String PaginaWeb { get; set; }
-		public char GradoOfrecido { get; set; }
+		public String GradoOfrecido { get; set; }
 		public String CompaniaCalle { get; set; }
-		public String Cuidad { get; set; }
+		public String Ciudad { get; set; }
 		public String State { get; set; }
 		public String LineaDeCalle_2 { get; set; }
 		public String CodigoPostal { get; set; }
