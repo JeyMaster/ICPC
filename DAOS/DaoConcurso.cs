@@ -77,7 +77,6 @@ namespace DAOS
 					objConcurso.Nombre = dr["nombre"].ToString();
 					objConcurso.InfoFacturacion = dr["infoFacturacion"].ToString();
 
-					ltsConcursos.Add(objConcurso);
 				}
 			}
 			catch (MySqlException ex)
