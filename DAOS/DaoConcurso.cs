@@ -40,6 +40,7 @@ namespace DAOS
 			}
 			catch (MySqlException ex)
 			{
+				ltsConcursos = null;
 				Console.WriteLine(ex.ToString());
 			}
 			finally
@@ -81,6 +82,7 @@ namespace DAOS
 			}
 			catch (MySqlException ex)
 			{
+				objConcurso = null;
 				Console.WriteLine(ex.ToString());
 			}
 			finally
@@ -117,6 +119,7 @@ namespace DAOS
 			}
 			catch (MySqlException ex)
 			{
+				done = 0;
 				Console.WriteLine(ex.ToString());
 			}
 			finally
@@ -139,9 +142,10 @@ namespace DAOS
 			try
 			{
 				String cmdStr = "UPDATE CONCURSOS SET nombre=@nombre,titulo=@titulo,email=@email," +
-					"locacion=@locacion,infoFacturacion=@infoFacturacion";
+					"locacion=@locacion,infoFacturacion=@infoFacturacion WHERE idConcurso=@idConcurso";
 
 				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
+				cmd.Parameters.AddWithValue("@idConcurso",objConcurso.IdConcurso);
 				cmd.Parameters.AddWithValue("@nombre", objConcurso.Nombre);
 				cmd.Parameters.AddWithValue("@titulo", objConcurso.Titulo);
 				cmd.Parameters.AddWithValue("@email", objConcurso.Email);
@@ -153,6 +157,7 @@ namespace DAOS
 			}
 			catch (MySqlException ex)
 			{
+				done = false;
 				Console.WriteLine(ex.ToString());
 			}
 			finally

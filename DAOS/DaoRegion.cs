@@ -65,8 +65,8 @@ namespace DAOS
 			}
 			catch (MySqlException ex)
 			{
+				ltsRegiones = null;
 				Console.WriteLine(ex.ToString());
-				
 			}
 			finally
 			{
@@ -101,8 +101,8 @@ namespace DAOS
 			}
 			catch (MySqlException ex)
 			{
+				objRegiones = null;
 				Console.WriteLine(ex.ToString());
-
 			}
 			finally
 			{
