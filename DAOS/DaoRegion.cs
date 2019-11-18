@@ -71,6 +71,7 @@ namespace DAOS
 			finally
 			{
 				conn.Close();
+				conn.Dispose();
 			}
 			return ltsRegiones;
 		}
@@ -139,6 +140,7 @@ namespace DAOS
 			finally
 			{
 				conn.Close();
+				conn.Dispose();
 			}
 			return done;
 		}

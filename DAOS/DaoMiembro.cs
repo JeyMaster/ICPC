@@ -121,7 +121,7 @@ namespace DAOS
 					objMiembro.Apellido = dr["apellido"].ToString();
 					objMiembro.NombreDistintivo = dr["nombreDistintivo"].ToString();
 					objMiembro.NombreDeCertificado = dr["nombreDeCertificado"].ToString();
-					objMiembro.Sexo = char.Parse(dr["sexo"].ToString());
+					objMiembro.Sexo =char.Parse(dr["sexo"].ToString());
 					objMiembro.TallaDeCamisa = dr["tallaDeCamisa"].ToString();
 					objMiembro.FechaDeNacimiento = dr.GetDateTime("fechaDeNacimiento");
 					objMiembro.CiudadDeOrigen = dr["ciudadDeOrigen"].ToString();
@@ -151,6 +151,67 @@ namespace DAOS
 		}
 
 		/// <summary>
+		/// Consulta todos los miembros de la base de datos
+		/// </summary>
+		/// <returns>Una lista de miembros</returns>
+		/// <returns>Una lista de miembros</returns>
+		public List<Miembro> SELECT()
+		{
+
+			MySqlConnection conn = Connection.Conn();
+			List<Miembro> ltsMiembros = null;
+
+			try
+			{
+				String cmdStr = "SELECT * FROM miembros";
+				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
+				MySqlDataReader dr = cmd.ExecuteReader();
+				ltsMiembros = new List<Miembro>();
+				while (dr.Read())
+				{
+					Miembro objMiembro = new Miembro();
+					objMiembro = new Miembro();
+					objMiembro.IdMiembro = int.Parse(dr["idMiembro"].ToString());
+					objMiembro.Rol = dr["rol"].ToString();
+					objMiembro.Email = dr["email"].ToString();
+					objMiembro.Contrasenia = dr["contrasena"].ToString();
+					objMiembro.Titulo = dr["titulo"].ToString();
+					objMiembro.Nombre = dr["nombre"].ToString();
+					objMiembro.Apellido = dr["apellido"].ToString();
+					objMiembro.NombreDistintivo = dr["nombreDistintivo"].ToString();
+					objMiembro.NombreDeCertificado = dr["nombreDeCertificado"].ToString();
+					objMiembro.Sexo = char.Parse(dr["sexo"].ToString());
+					objMiembro.TallaDeCamisa = dr["tallaDeCamisa"].ToString();
+					objMiembro.FechaDeNacimiento = dr.GetDateTime("fechaDeNacimiento");
+					objMiembro.CiudadDeOrigen = dr["ciudadDeOrigen"].ToString();
+					objMiembro.EstadoDeOrigen = dr["estadoDeOrigen"].ToString();
+					objMiembro.PaisDeOrigen = dr["paisDeOrigen"].ToString();
+					objMiembro.PaisDeResidencia = dr["paisDeResidencia"].ToString();
+					objMiembro.Ocupacion = dr["ocupacion"].ToString();
+					objMiembro.InstitutoEmpleoCompania = dr["institutoEmpleoCompania"].ToString();
+					objMiembro.NecesidadesEspeciales = dr["necesidadesEspeciales"].ToString();
+					objMiembro.EmailSecundario = dr["emailSecundario"].ToString();
+
+					ltsMiembros.Add(objMiembro);
+
+				}
+
+			}
+			catch (MySqlException ex)
+			{
+				Console.WriteLine(ex.ToString());
+				ltsMiembros = null;
+
+			}
+			finally
+			{
+				conn.Close();
+				conn.Dispose();
+			}
+			return ltsMiembros;
+		}
+
+		/// <summary>
 		/// Actualiza los valores de un miembro en la base de datos
 		/// </summary>
 		/// <param name="objMiembro">Miewmbro a actualizar</param>
@@ -162,23 +223,22 @@ namespace DAOS
 
 			try
 			{
-				String cmdStr = "UPDATE miembros SET rol = @rol,email = @email" +
-					"contrasena = sha2(@contrasena,512), titulo = @titulo," +
-					"nombre = @nombre, apellido = @apellido," +
-					"nombreDistintivo = @nombreDis, nombreDeCertificado = @nombreCer," +
-					"sexo = @sexo, tallaDeCamisa = @talla, fechaDeNacimiento = @fechaNac," +
-					"ciudadDeOrigen = @ciudadOr, estadoDeOrigen = @estadoOr," +
-					"paisDeOrigen = @paisOr, paisDeResidencia = @paisRe," +
-					"ocupacion = @ocupacion, institutoEmpleoCompania = @insEmpComp," +
-					"necesidadesEspeciales = @necesidadesEs, emailSecundario = @emailSec" +
+				String cmdStr = "UPDATE miembros SET rol=@rol,email=@email," +
+					"titulo=@titulo," +
+					"nombre=@nombre,apellido=@apellido," +
+					"nombreDistintivo=@nombreDis,nombreDeCertificado=@nombreCer," +
+					"sexo=@sexo,tallaDeCamisa=@talla,fechaDeNacimiento=@fechaNac," +
+					"ciudadDeOrigen=@ciudadOr,estadoDeOrigen=@estadoOr," +
+					"paisDeOrigen=@paisOr,paisDeResidencia=@paisRe," +
+					"ocupacion=@ocupacion,institutoEmpleoCompania=@insEmpComp," +
+					"necesidadesEspeciales=@necesidadesEs,emailSecundario=@emailSec" +
 					" WHERE (idMiembro = @id)";
 
 				MySqlCommand cmd = new MySqlCommand(cmdStr,conn);
 
 				cmd.Parameters.AddWithValue("@id",objMiembro.IdMiembro);
 				cmd.Parameters.AddWithValue("@rol",objMiembro.Rol);
-				cmd.Parameters.AddWithValue("@email",objMiembro.Email);
-				cmd.Parameters.AddWithValue("@contrasena",objMiembro.Contrasenia);
+				cmd.Parameters.AddWithValue("@email", objMiembro.Email);
 				cmd.Parameters.AddWithValue("@titulo",objMiembro.Titulo);
 				cmd.Parameters.AddWithValue("@nombre",objMiembro.Nombre);
 				cmd.Parameters.AddWithValue("@apellido",objMiembro.Apellido);
@@ -192,8 +252,8 @@ namespace DAOS
 				cmd.Parameters.AddWithValue("@paisOr",objMiembro.PaisDeOrigen);
 				cmd.Parameters.AddWithValue("@paisRe",objMiembro.PaisDeResidencia);
 				cmd.Parameters.AddWithValue("@ocupacion",objMiembro.Ocupacion);
-				cmd.Parameters.AddWithValue("@insEmpCom",objMiembro.InstitutoEmpleoCompania);
-				cmd.Parameters.AddWithValue("@nesecidadesEs",objMiembro.NecesidadesEspeciales);
+				cmd.Parameters.AddWithValue("@insEmpComp",objMiembro.InstitutoEmpleoCompania);
+				cmd.Parameters.AddWithValue("@necesidadesEs",objMiembro.NecesidadesEspeciales);
 				cmd.Parameters.AddWithValue("@emailSec",objMiembro.EmailSecundario);
 
 				cmd.ExecuteNonQuery();
