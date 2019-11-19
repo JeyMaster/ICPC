@@ -73,7 +73,7 @@ namespace DAOS
 					objMiembro.Nombre = dr["nombre"].ToString();
 					objMiembro.Apellido = dr["apellido"].ToString();
 					objMiembro.Email = dr["email"].ToString();
-					objMiembro.IdMiembro = int.Parse(dr["idMiembro"].ToString());
+					
 				}
 
 			}
@@ -112,7 +112,6 @@ namespace DAOS
 				while (dr.Read())
 				{
 					objMiembro = new Miembro();
-					objMiembro.IdMiembro = int.Parse(dr["idMiembro"].ToString());
 					objMiembro.Rol = dr["rol"].ToString();
 					objMiembro.Email = dr["email"].ToString();
 					objMiembro.Contrasenia = dr["contrasena"].ToString();
@@ -171,7 +170,6 @@ namespace DAOS
 				{
 					Miembro objMiembro = new Miembro();
 					objMiembro = new Miembro();
-					objMiembro.IdMiembro = int.Parse(dr["idMiembro"].ToString());
 					objMiembro.Rol = dr["rol"].ToString();
 					objMiembro.Email = dr["email"].ToString();
 					objMiembro.Contrasenia = dr["contrasena"].ToString();
@@ -223,7 +221,7 @@ namespace DAOS
 
 			try
 			{
-				String cmdStr = "UPDATE miembros SET rol=@rol,email=@email," +
+				String cmdStr = "UPDATE miembros SET rol=@rol," +
 					"titulo=@titulo," +
 					"nombre=@nombre,apellido=@apellido," +
 					"nombreDistintivo=@nombreDis,nombreDeCertificado=@nombreCer," +
@@ -232,11 +230,9 @@ namespace DAOS
 					"paisDeOrigen=@paisOr,paisDeResidencia=@paisRe," +
 					"ocupacion=@ocupacion,institutoEmpleoCompania=@insEmpComp," +
 					"necesidadesEspeciales=@necesidadesEs,emailSecundario=@emailSec" +
-					" WHERE (idMiembro = @id)";
+					" WHERE (email = @email)";
 
 				MySqlCommand cmd = new MySqlCommand(cmdStr,conn);
-
-				cmd.Parameters.AddWithValue("@id",objMiembro.IdMiembro);
 				cmd.Parameters.AddWithValue("@rol",objMiembro.Rol);
 				cmd.Parameters.AddWithValue("@email", objMiembro.Email);
 				cmd.Parameters.AddWithValue("@titulo",objMiembro.Titulo);
