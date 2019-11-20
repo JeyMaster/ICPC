@@ -34,6 +34,7 @@ namespace DAOS
 					objConcurso.Locacion = dr["locacion"].ToString();
 					objConcurso.Nombre = dr["nombre"].ToString();
 					objConcurso.InfoFacturacion = dr["infoFacturacion"].ToString();
+					objConcurso.Email = dr["email"].ToString();
 
 					ltsConcursos.Add(objConcurso);
 				}
@@ -77,7 +78,7 @@ namespace DAOS
 					objConcurso.Locacion = dr["locacion"].ToString();
 					objConcurso.Nombre = dr["nombre"].ToString();
 					objConcurso.InfoFacturacion = dr["infoFacturacion"].ToString();
-
+					objConcurso.Email = dr["email"].ToString();
 				}
 			}
 			catch (MySqlException ex)

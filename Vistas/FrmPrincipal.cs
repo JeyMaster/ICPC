@@ -16,12 +16,7 @@ namespace Vistas
 	{
 		public FrmPrincipal()
 		{
-			InitializeComponent();
-			Sede sede = new Sede();
-			sede.Nombre = "ITSUR BAJIO";
-			sede.IdRegion = 1;
-			sede.IdSede = 1;
-			new DaoSede().UPDATE(sede) ;
+		
 		}
 	}
 }

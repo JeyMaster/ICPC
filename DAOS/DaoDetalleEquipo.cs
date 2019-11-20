@@ -6,7 +6,7 @@ using Modelo;
 
 namespace DAOS
 {
-	class DaoDetalleEquipo
+	public class DaoDetalleEquipo
 	{
 		public int INSERT(DetalleEquipo objDetalleEquipo)
 		{
@@ -14,9 +14,9 @@ namespace DAOS
 			int done = 0;
 			try
 			{
-				String cmdStr = "INSERT INTO DETALLE_EQUIPO VALUES(@idEquipo,@idMiembro,@rol)";
+				String cmdStr = "INSERT INTO DETALLE_EQUIPO VALUES(@idEquipo,@email,@rol)";
 				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
-				cmd.Parameters.AddWithValue("@idMiembrro", objDetalleEquipo.IdMimbro);
+				cmd.Parameters.AddWithValue("@email", objDetalleEquipo.Email);
 				cmd.Parameters.AddWithValue("@idEquipo", objDetalleEquipo.IdEquipo);
 				cmd.Parameters.AddWithValue("@rol", objDetalleEquipo.Rol);
 

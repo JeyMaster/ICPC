@@ -64,6 +64,7 @@ namespace DAOS
 					objEquipo.IdEquipo = int.Parse(dr["idEquipo"].ToString());
 					objEquipo.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
 					objEquipo.Ciclo = dr.GetDateTime("ciclo");
+					objEquipo.Nombre = dr["nombre"].ToString();
 
 					ltsEquipos.Add(objEquipo);
 				}
@@ -105,6 +106,7 @@ namespace DAOS
 					objEquipo.IdEquipo = int.Parse(dr["idEquipo"].ToString());
 					objEquipo.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
 					objEquipo.Ciclo = dr.GetDateTime("ciclo");
+					objEquipo.Nombre = dr["nombre"].ToString();
 				}
 			}
 			catch (MySqlException ex)
