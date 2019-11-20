@@ -16,7 +16,6 @@ namespace Vistas
 	{
 		public FrmPrincipal()
 		{
-			InitializeComponent();
 		
 		}
 	}

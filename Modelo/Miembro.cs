@@ -4,7 +4,24 @@ namespace Modelo
 {
 	public class Miembro
 	{
-		public int IdMiembro { get; set; }
+
+		public Miembro() { }
+
+		/// <summary>
+		/// Constructor para inicilizar un miembro en su registro
+		/// </summary>
+		/// <param name="email">Email del miembro</param>
+		/// <param name="nombre">Nombre del miembro</param>
+		/// <param name="apellido">Apellido del miembro</param>
+		/// <param name="contrasenia">Contraseña del miembro</param>
+		public Miembro(String email,String nombre,String apellido,String contrasenia)
+		{
+			Email = email;
+			Nombre = nombre;
+			Apellido = apellido;
+			Contrasenia = contrasenia;
+		}
+
 		public String Rol { get; set; }
 		public String Email { get; set; }
 		public String Contrasenia { get; set; }

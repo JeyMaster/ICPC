@@ -6,7 +6,7 @@ namespace Modelo
 {
 	public class DetalleConcurso
 	{
-		public int IdCOncurso { get; set; }
+		public int IdConcurso { get; set; }
 		public int IdEquipo { get; set; }
 	}
 }
