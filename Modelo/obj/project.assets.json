@@ -180,25 +180,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arman\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\beton\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arman\\source\\repos\\ICPC\\Modelo\\Modelo.csproj",
+      "projectUniqueName": "C:\\Users\\beton\\Desktop\\ProyRegICPC\\ICPC\\Modelo\\Modelo.csproj",
       "projectName": "Modelo",
-      "projectPath": "C:\\Users\\arman\\source\\repos\\ICPC\\Modelo\\Modelo.csproj",
-      "packagesPath": "C:\\Users\\arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arman\\source\\repos\\ICPC\\Modelo\\obj\\",
+      "projectPath": "C:\\Users\\beton\\Desktop\\ProyRegICPC\\ICPC\\Modelo\\Modelo.csproj",
+      "packagesPath": "C:\\Users\\beton\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\beton\\Desktop\\ProyRegICPC\\ICPC\\Modelo\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\arman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\beton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

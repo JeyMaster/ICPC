@@ -12,9 +12,9 @@ using Modelo;
 
 namespace Vistas
 {
-	public partial class FrmPrincipal : Form
+	public partial class FrmLogin : Form
 	{
-		public FrmPrincipal()
+		public FrmLogin()
 		{
 		
 		}
