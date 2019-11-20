@@ -96,7 +96,7 @@ namespace DAOS
 		/// </summary>
 		/// <param name="idMiembro">Llave primaria del miembro</param>
 		/// <returns>Un miembro</returns>
-		public Miembro SELECT(int idMiembro)
+		public Miembro SELECT(String email)
 		{
 
 			MySqlConnection conn = Connection.Conn();
@@ -104,9 +104,9 @@ namespace DAOS
 
 			try
 			{
-				String cmdStr = "SELECT * FROM miembros WHERE idMiembro=@id";
+				String cmdStr = "SELECT * FROM miembros WHERE email=@email";
 				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
-				cmd.Parameters.AddWithValue("@id",idMiembro);
+				cmd.Parameters.AddWithValue("@email",email);
 				MySqlDataReader dr = cmd.ExecuteReader();
 
 				while (dr.Read())
