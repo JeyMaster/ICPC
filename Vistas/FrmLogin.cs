@@ -16,7 +16,29 @@ namespace Vistas
 	{
 		public FrmLogin()
 		{
-		
+            InitializeComponent();
 		}
-	}
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            new FrmTableroMiembro().ShowDialog();
+            
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            new FrmRegistro().ShowDialog();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            new FrmTableroAdministrador().ShowDialog();
+        }
+    }
 }

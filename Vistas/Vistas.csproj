@@ -46,16 +46,106 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAdminConcursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminConcursos.Designer.cs">
+      <DependentUpon>FrmAdminConcursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminEquipos.Designer.cs">
+      <DependentUpon>FrmAdminEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminInstituciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminInstituciones.Designer.cs">
+      <DependentUpon>FrmAdminInstituciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminRegiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminRegiones.Designer.cs">
+      <DependentUpon>FrmAdminRegiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminSedes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminSedes.Designer.cs">
+      <DependentUpon>FrmAdminSedes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCrearEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCrearEquipo.Designer.cs">
+      <DependentUpon>FrmCrearEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPerfilMiembro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerfilMiembro.Designer.cs">
+      <DependentUpon>FrmPerfilMiembro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistro.Designer.cs">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTableroAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTableroAdministrador.Designer.cs">
+      <DependentUpon>FrmTableroAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTableroMiembro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTableroMiembro.Designer.cs">
+      <DependentUpon>FrmTableroMiembro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAdminConcursos.resx">
+      <DependentUpon>FrmAdminConcursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminEquipos.resx">
+      <DependentUpon>FrmAdminEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminInstituciones.resx">
+      <DependentUpon>FrmAdminInstituciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminRegiones.resx">
+      <DependentUpon>FrmAdminRegiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminSedes.resx">
+      <DependentUpon>FrmAdminSedes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCrearEquipo.resx">
+      <DependentUpon>FrmCrearEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerfilMiembro.resx">
+      <DependentUpon>FrmPerfilMiembro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistro.resx">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTableroAdministrador.resx">
+      <DependentUpon>FrmTableroAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTableroMiembro.resx">
+      <DependentUpon>FrmTableroMiembro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
