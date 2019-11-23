@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAOS;
-using Modelo;
 
 namespace Vistas
 {
-	public partial class FrmPrincipal : Form
-	{
-		public FrmPrincipal()
-		{
-		
-		}
-	}
+    public partial class FrmAdminConcursos : Form
+    {
+        public FrmAdminConcursos()
+        {
+            InitializeComponent();
+        }
+    }
 }
