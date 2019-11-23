@@ -23,11 +23,31 @@ namespace Vistas
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
 
-			new FrmTableroMiembro().Show();
 			if (Validaciones(Strings.validarCorreo, txtEmail, "Email incorrecto")
 				&Validaciones(Strings.alfaNumerico,txtContrasena,"Solo valores alfanumericos"))
 			{
-				
+				if (txtEmail.Text == Strings.ADMIN && txtContrasena.Text == Strings.PASS)
+				{
+					new FrmTableroAdministrador().ShowDialog();
+					clearTextBoxes();
+				}
+				else
+				{
+					Miembro objMiembro = new Miembro();
+					objMiembro.Email = txtEmail.Text;
+					objMiembro.Contrasenia = txtContrasena.Text;
+
+					objMiembro = new DaoMiembro().SELECT_TO_LOGIN(objMiembro);
+					if (objMiembro!=null)
+					{
+						new FrmTableroMiembro().ShowDialog();
+						clearTextBoxes();
+					}
+					else
+					{
+						MessageBox.Show("Usuario o contraseña incorrectos");
+					}
+				}
 
 			}
             
@@ -43,8 +63,12 @@ namespace Vistas
             new FrmRegistro().ShowDialog();
         }
 
-      
 
+		private void clearTextBoxes()
+		{
+			txtEmail.Text = "";
+			txtContrasena.Text = "";
+		}
 
 		private bool Validaciones(String validacion,TextBox txtComponent,String msg)
 		{
