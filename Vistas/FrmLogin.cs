@@ -30,7 +30,7 @@ namespace Vistas
 				
 
 			}
-            String hi = "hi";
+            
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

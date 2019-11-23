@@ -76,6 +76,30 @@
     <Compile Include="FrmAdminSedes.Designer.cs">
       <DependentUpon>FrmAdminSedes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarEditarConcursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEditarConcursos.Designer.cs">
+      <DependentUpon>FrmAgregarEditarConcursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarEditarInstituciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEditarInstituciones.Designer.cs">
+      <DependentUpon>FrmAgregarEditarInstituciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarEditarRegiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEditarRegiones.Designer.cs">
+      <DependentUpon>FrmAgregarEditarRegiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarEditarSedes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEditarSedes.Designer.cs">
+      <DependentUpon>FrmAgregarEditarSedes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCrearEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +152,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminSedes.resx">
       <DependentUpon>FrmAdminSedes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarConcursos.resx">
+      <DependentUpon>FrmAgregarEditarConcursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarInstituciones.resx">
+      <DependentUpon>FrmAgregarEditarInstituciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarRegiones.resx">
+      <DependentUpon>FrmAgregarEditarRegiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarSedes.resx">
+      <DependentUpon>FrmAgregarEditarSedes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCrearEquipo.resx">
       <DependentUpon>FrmCrearEquipo.cs</DependentUpon>

@@ -33,16 +33,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnAgregarIntegrante = new System.Windows.Forms.Button();
+            this.dgvIntegrantes = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.cbRegiones = new System.Windows.Forms.ComboBox();
+            this.cbSedes = new System.Windows.Forms.ComboBox();
+            this.cbConcursos = new System.Windows.Forms.ComboBox();
+            this.cbInstituciones = new System.Windows.Forms.ComboBox();
+            this.txtNombreEquipo = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIntegrantes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,94 +90,94 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Ingresa El nombre del equipo";
             // 
-            // button1
+            // btnAgregarIntegrante
             // 
-            this.button1.Location = new System.Drawing.Point(15, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Nuevo Integrante";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregarIntegrante.Location = new System.Drawing.Point(15, 227);
+            this.btnAgregarIntegrante.Name = "btnAgregarIntegrante";
+            this.btnAgregarIntegrante.Size = new System.Drawing.Size(190, 23);
+            this.btnAgregarIntegrante.TabIndex = 8;
+            this.btnAgregarIntegrante.Text = "Agregar Integrante";
+            this.btnAgregarIntegrante.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvIntegrantes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 256);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(190, 179);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvIntegrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIntegrantes.Location = new System.Drawing.Point(15, 256);
+            this.dgvIntegrantes.Name = "dgvIntegrantes";
+            this.dgvIntegrantes.Size = new System.Drawing.Size(190, 179);
+            this.dgvIntegrantes.TabIndex = 9;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(15, 441);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(15, 441);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAgregar
             // 
-            this.button3.Location = new System.Drawing.Point(130, 441);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Agregar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(130, 441);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbRegiones
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cbRegiones.FormattingEnabled = true;
+            this.cbRegiones.Location = new System.Drawing.Point(15, 25);
+            this.cbRegiones.Name = "cbRegiones";
+            this.cbRegiones.Size = new System.Drawing.Size(190, 21);
+            this.cbRegiones.TabIndex = 12;
             // 
-            // comboBox2
+            // cbSedes
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(15, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(190, 21);
-            this.comboBox2.TabIndex = 13;
+            this.cbSedes.FormattingEnabled = true;
+            this.cbSedes.Location = new System.Drawing.Point(15, 71);
+            this.cbSedes.Name = "cbSedes";
+            this.cbSedes.Size = new System.Drawing.Size(190, 21);
+            this.cbSedes.TabIndex = 13;
             // 
-            // comboBox3
+            // cbConcursos
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(15, 111);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(190, 21);
-            this.comboBox3.TabIndex = 14;
+            this.cbConcursos.FormattingEnabled = true;
+            this.cbConcursos.Location = new System.Drawing.Point(15, 111);
+            this.cbConcursos.Name = "cbConcursos";
+            this.cbConcursos.Size = new System.Drawing.Size(190, 21);
+            this.cbConcursos.TabIndex = 14;
             // 
-            // comboBox4
+            // cbInstituciones
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(15, 152);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(190, 21);
-            this.comboBox4.TabIndex = 15;
+            this.cbInstituciones.FormattingEnabled = true;
+            this.cbInstituciones.Location = new System.Drawing.Point(15, 152);
+            this.cbInstituciones.Name = "cbInstituciones";
+            this.cbInstituciones.Size = new System.Drawing.Size(190, 21);
+            this.cbInstituciones.TabIndex = 15;
             // 
-            // textBox1
+            // txtNombreEquipo
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtNombreEquipo.Location = new System.Drawing.Point(15, 192);
+            this.txtNombreEquipo.Name = "txtNombreEquipo";
+            this.txtNombreEquipo.Size = new System.Drawing.Size(190, 20);
+            this.txtNombreEquipo.TabIndex = 16;
             // 
             // FrmCrearEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(236, 476);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtNombreEquipo);
+            this.Controls.Add(this.cbInstituciones);
+            this.Controls.Add(this.cbConcursos);
+            this.Controls.Add(this.cbSedes);
+            this.Controls.Add(this.cbRegiones);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.dgvIntegrantes);
+            this.Controls.Add(this.btnAgregarIntegrante);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -186,7 +186,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCrearEquipo";
             this.Text = "FrmCrearEquipo";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIntegrantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,14 +199,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAgregarIntegrante;
+        private System.Windows.Forms.DataGridView dgvIntegrantes;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ComboBox cbRegiones;
+        private System.Windows.Forms.ComboBox cbSedes;
+        private System.Windows.Forms.ComboBox cbConcursos;
+        private System.Windows.Forms.ComboBox cbInstituciones;
+        private System.Windows.Forms.TextBox txtNombreEquipo;
     }
 }
