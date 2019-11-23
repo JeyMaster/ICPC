@@ -22,10 +22,12 @@ namespace Vistas
 		private Regex automata;
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
+
+			new FrmTableroMiembro().Show();
 			if (Validaciones(Strings.validarCorreo, txtEmail, "Email incorrecto")
 				&Validaciones(Strings.alfaNumerico,txtContrasena,"Solo valores alfanumericos"))
 			{
-				MessageBox.Show("Listo");
+				
 
 			}
             String hi = "hi";
@@ -43,10 +45,6 @@ namespace Vistas
 
       
 
-		private void txtEmail_KeyUp(object sender, KeyEventArgs e)
-		{
-			
-		}
 
 		private bool Validaciones(String validacion,TextBox txtComponent,String msg)
 		{
