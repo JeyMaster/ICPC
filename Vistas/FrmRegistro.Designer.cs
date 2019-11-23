@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.components = new System.ComponentModel.Container();
+			this.txtEmail = new System.Windows.Forms.TextBox();
+			this.txtNombre = new System.Windows.Forms.TextBox();
+			this.txtContraseña = new System.Windows.Forms.TextBox();
+			this.txtApellido = new System.Windows.Forms.TextBox();
+			this.txtRcontraseña = new System.Windows.Forms.TextBox();
 			this.btnRegresar = new System.Windows.Forms.Button();
 			this.btnRegistrar = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
@@ -42,48 +43,50 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label6 = new System.Windows.Forms.Label();
+			this.errPrvRegistro = new System.Windows.Forms.ErrorProvider(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.errPrvRegistro)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// textBox1
+			// txtEmail
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(58, 156);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(286, 26);
-			this.textBox1.TabIndex = 0;
+			this.txtEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtEmail.Location = new System.Drawing.Point(58, 156);
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(286, 26);
+			this.txtEmail.TabIndex = 0;
 			// 
-			// textBox2
+			// txtNombre
 			// 
-			this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(58, 225);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(286, 26);
-			this.textBox2.TabIndex = 1;
+			this.txtNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNombre.Location = new System.Drawing.Point(58, 225);
+			this.txtNombre.Name = "txtNombre";
+			this.txtNombre.Size = new System.Drawing.Size(286, 26);
+			this.txtNombre.TabIndex = 1;
 			// 
-			// textBox3
+			// txtContraseña
 			// 
-			this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox3.Location = new System.Drawing.Point(60, 352);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(286, 26);
-			this.textBox3.TabIndex = 2;
+			this.txtContraseña.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtContraseña.Location = new System.Drawing.Point(60, 352);
+			this.txtContraseña.Name = "txtContraseña";
+			this.txtContraseña.Size = new System.Drawing.Size(286, 26);
+			this.txtContraseña.TabIndex = 2;
 			// 
-			// textBox4
+			// txtApellido
 			// 
-			this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox4.Location = new System.Drawing.Point(58, 288);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(286, 26);
-			this.textBox4.TabIndex = 3;
+			this.txtApellido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtApellido.Location = new System.Drawing.Point(58, 288);
+			this.txtApellido.Name = "txtApellido";
+			this.txtApellido.Size = new System.Drawing.Size(286, 26);
+			this.txtApellido.TabIndex = 3;
 			// 
-			// textBox5
+			// txtRcontraseña
 			// 
-			this.textBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox5.Location = new System.Drawing.Point(60, 416);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(286, 26);
-			this.textBox5.TabIndex = 4;
+			this.txtRcontraseña.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtRcontraseña.Location = new System.Drawing.Point(60, 416);
+			this.txtRcontraseña.Name = "txtRcontraseña";
+			this.txtRcontraseña.Size = new System.Drawing.Size(286, 26);
+			this.txtRcontraseña.TabIndex = 4;
 			// 
 			// btnRegresar
 			// 
@@ -191,6 +194,10 @@
 			this.label6.TabIndex = 13;
 			this.label6.Text = "Registro";
 			// 
+			// errPrvRegistro
+			// 
+			this.errPrvRegistro.ContainerControl = this;
+			// 
 			// FrmRegistro
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,14 +213,15 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnRegistrar);
 			this.Controls.Add(this.btnRegresar);
-			this.Controls.Add(this.textBox5);
-			this.Controls.Add(this.textBox4);
-			this.Controls.Add(this.textBox3);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtRcontraseña);
+			this.Controls.Add(this.txtApellido);
+			this.Controls.Add(this.txtContraseña);
+			this.Controls.Add(this.txtNombre);
+			this.Controls.Add(this.txtEmail);
 			this.Name = "FrmRegistro";
 			this.Text = "Registro";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.errPrvRegistro)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -221,11 +229,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtRcontraseña;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label label1;
@@ -235,5 +243,6 @@
         private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.ErrorProvider errPrvRegistro;
 	}
 }

@@ -16,7 +16,7 @@ namespace DAOS
 		/// <returns>Retorna el valor de llave primaria que le pertenece</returns>
 		public int INSERT(Miembro objMiembro)
 		{
-			int done = 0;
+			int done = -1;
 			MySqlConnection conn = Connection.Conn();
 
 			try
@@ -35,7 +35,7 @@ namespace DAOS
 			}
 			catch (MySqlException ex)
 			{
-				done = 0;
+				done = -1;
 				Console.WriteLine(ex.ToString());
 			}
 			finally
@@ -59,7 +59,7 @@ namespace DAOS
 			
 			try
 			{
-				String cmdStr = "SELECT nombre,apellido,email,idMiembro FROM miembros " +
+				String cmdStr = "SELECT nombre,apellido,email FROM miembros " +
 					"WHERE email=@email and contrasena=sha2(@contrasena,512);";
 				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
 				cmd.Parameters.AddWithValue("@email",objMiembro.Email);

@@ -48,7 +48,7 @@
 			this.pnMenu.ForeColor = System.Drawing.Color.DarkSlateGray;
 			this.pnMenu.Location = new System.Drawing.Point(0, 0);
 			this.pnMenu.Name = "pnMenu";
-			this.pnMenu.Size = new System.Drawing.Size(175, 511);
+			this.pnMenu.Size = new System.Drawing.Size(175, 567);
 			this.pnMenu.TabIndex = 0;
 			// 
 			// btnAdminEquipos
@@ -119,7 +119,7 @@
 			this.pnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnContenedor.Location = new System.Drawing.Point(175, 0);
 			this.pnContenedor.Name = "pnContenedor";
-			this.pnContenedor.Size = new System.Drawing.Size(759, 511);
+			this.pnContenedor.Size = new System.Drawing.Size(822, 567);
 			this.pnContenedor.TabIndex = 1;
 			// 
 			// FrmTableroMiembro
@@ -127,7 +127,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(934, 511);
+			this.ClientSize = new System.Drawing.Size(997, 567);
 			this.Controls.Add(this.pnContenedor);
 			this.Controls.Add(this.pnMenu);
 			this.Name = "FrmTableroMiembro";
