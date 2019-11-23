@@ -28,8 +28,7 @@ namespace Vistas
 				MessageBox.Show("Listo");
 
 			}
-            
-
+            String hi = "hi";
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
