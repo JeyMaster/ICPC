@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAOS;
 using Modelo;
+using System.Text.RegularExpressions;
 
 namespace Vistas
 {
@@ -18,10 +19,15 @@ namespace Vistas
 		{
             InitializeComponent();
 		}
-
+		private Regex automata;
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            new FrmTableroMiembro().ShowDialog();
+			if (Validaciones(Strings.validarCorreo, txtEmail, "Email incorrecto")
+				&Validaciones(Strings.alfaNumerico,txtContrasena,"Solo valores alfanumericos"))
+			{
+				MessageBox.Show("Listo");
+
+			}
             
 
         }
@@ -36,9 +42,29 @@ namespace Vistas
             new FrmRegistro().ShowDialog();
         }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            new FrmTableroAdministrador().ShowDialog();
-        }
-    }
+      
+
+		private void txtEmail_KeyUp(object sender, KeyEventArgs e)
+		{
+			
+		}
+
+		private bool Validaciones(String validacion,TextBox txtComponent,String msg)
+		{
+			bool done = false;
+			automata = new Regex(validacion);
+			if (!automata.IsMatch(txtComponent.Text))
+			{
+				errPrvLogin.SetError(txtComponent, msg);
+				done = false;
+			}
+			else
+			{
+				errPrvLogin.SetError(txtComponent, "");
+				done = true;
+			}
+
+			return done;
+		}
+	}
 }

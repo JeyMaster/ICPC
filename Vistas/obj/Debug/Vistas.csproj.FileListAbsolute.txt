@@ -43,3 +43,14 @@ C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminInstituc
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminRegiones.resources
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminSedes.resources
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmTableroAdministrador.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAdminConcursos.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAdminEquipos.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAdminInstituciones.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAdminRegiones.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAdminSedes.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmCrearEquipo.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmLogin.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmPerfilMiembro.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmRegistro.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmTableroAdministrador.resources
+C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmTableroMiembro.resources
