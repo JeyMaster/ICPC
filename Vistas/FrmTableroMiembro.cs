@@ -46,7 +46,7 @@ namespace Vistas
 
         private void btnAdminEquipos_Click(object sender, EventArgs e)
         {
-            abrirFromHijo(new FrmAdminEquipos());
+            abrirFromHijo(new FrmEquiposMiembro());
         }
     }
 }

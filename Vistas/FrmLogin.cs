@@ -19,7 +19,9 @@ namespace Vistas
 		{
             InitializeComponent();
 		}
+
 		private Regex automata;
+		public static Miembro user;
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
 
@@ -40,6 +42,7 @@ namespace Vistas
 					objMiembro = new DaoMiembro().SELECT_TO_LOGIN(objMiembro);
 					if (objMiembro!=null)
 					{
+						user = objMiembro;
 						new FrmTableroMiembro().ShowDialog();
 						clearTextBoxes();
 					}

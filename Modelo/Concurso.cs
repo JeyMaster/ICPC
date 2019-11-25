@@ -14,5 +14,10 @@ namespace Modelo
 		public String Locacion { get; set; }
 		public String InfoFacturacion { get; set; }
 
+		override
+		public string ToString()
+		{
+			return Nombre;
+		}
 	}
 }

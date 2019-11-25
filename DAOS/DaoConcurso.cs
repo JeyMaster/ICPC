@@ -10,19 +10,19 @@ namespace DAOS
 	{
 
 		/// <summary>
-		/// Consulta los concursos a la base de datos
+		/// Consulta los concursos que tiene una sede a la base de datos
 		/// </summary>
 		/// <returns>Una lista de concursos</returns>
-		public List<Concurso> SELECT()
+		public List<Concurso> SELECT_FOR_SEDE(int idSede)
 		{
 			List<Concurso> ltsConcursos = null;
 			MySqlConnection conn = Connection.Conn();
 
 			try
 			{
-				String cmdStr = "SELECT * FROM CONCURSOS";
+				String cmdStr = "SELECT * FROM CONCURSOS WHERE idSede=@id";
 				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
-
+				cmd.Parameters.AddWithValue("@id",idSede);
 				MySqlDataReader dr = cmd.ExecuteReader();
 				ltsConcursos = new List<Concurso>();
 				while (dr.Read())

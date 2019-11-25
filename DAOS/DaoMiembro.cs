@@ -112,7 +112,6 @@ namespace DAOS
 				while (dr.Read())
 				{
 					objMiembro = new Miembro();
-					objMiembro.Rol = dr["rol"].ToString();
 					objMiembro.Email = dr["email"].ToString();
 					objMiembro.Contrasenia = dr["contrasena"].ToString();
 					objMiembro.Titulo = dr["titulo"].ToString();
@@ -170,7 +169,6 @@ namespace DAOS
 				{
 					Miembro objMiembro = new Miembro();
 					objMiembro = new Miembro();
-					objMiembro.Rol = dr["rol"].ToString();
 					objMiembro.Email = dr["email"].ToString();
 					objMiembro.Contrasenia = dr["contrasena"].ToString();
 					objMiembro.Titulo = dr["titulo"].ToString();
@@ -221,7 +219,7 @@ namespace DAOS
 
 			try
 			{
-				String cmdStr = "UPDATE miembros SET rol=@rol," +
+				String cmdStr = "UPDATE miembros SET " +
 					"titulo=@titulo," +
 					"nombre=@nombre,apellido=@apellido," +
 					"nombreDistintivo=@nombreDis,nombreDeCertificado=@nombreCer," +
@@ -233,7 +231,6 @@ namespace DAOS
 					" WHERE (email = @email)";
 
 				MySqlCommand cmd = new MySqlCommand(cmdStr,conn);
-				cmd.Parameters.AddWithValue("@rol",objMiembro.Rol);
 				cmd.Parameters.AddWithValue("@email", objMiembro.Email);
 				cmd.Parameters.AddWithValue("@titulo",objMiembro.Titulo);
 				cmd.Parameters.AddWithValue("@nombre",objMiembro.Nombre);

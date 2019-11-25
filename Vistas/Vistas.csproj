@@ -52,11 +52,11 @@
     <Compile Include="FrmAdminConcursos.Designer.cs">
       <DependentUpon>FrmAdminConcursos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAdminEquipos.cs">
+    <Compile Include="FrmEquiposMiembro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAdminEquipos.Designer.cs">
-      <DependentUpon>FrmAdminEquipos.cs</DependentUpon>
+    <Compile Include="FrmEquiposMiembro.Designer.cs">
+      <DependentUpon>FrmEquiposMiembro.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAdminInstituciones.cs">
       <SubType>Form</SubType>
@@ -141,8 +141,8 @@
     <EmbeddedResource Include="FrmAdminConcursos.resx">
       <DependentUpon>FrmAdminConcursos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAdminEquipos.resx">
-      <DependentUpon>FrmAdminEquipos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEquiposMiembro.resx">
+      <DependentUpon>FrmEquiposMiembro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminInstituciones.resx">
       <DependentUpon>FrmAdminInstituciones.cs</DependentUpon>

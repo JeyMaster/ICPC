@@ -9,5 +9,11 @@ namespace Modelo
 		public int IdSede { get; set; }
 		public String Nombre { get; set; }
 		public int IdRegion { get; set; }
+
+		override
+		public string ToString()
+		{
+			return Nombre;
+		}
 	}
 }

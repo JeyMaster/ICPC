@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class FrmAdminEquipos : Form
+    public partial class FrmEquiposMiembro : Form
     {
-        public FrmAdminEquipos()
+        public FrmEquiposMiembro()
         {
             InitializeComponent();
         }

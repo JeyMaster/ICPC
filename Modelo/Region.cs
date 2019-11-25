@@ -8,5 +8,11 @@ namespace Modelo
 	{
 		public int IdRegion { get; set; }
 		public String Nombre { get; set; }
+
+		override
+		public String ToString()
+		{
+			return Nombre;
+		}
 	}
 }

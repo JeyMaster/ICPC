@@ -43,18 +43,18 @@ namespace DAOS
 		}
 
 		/// <summary>
-		/// Consulta las sedes en la base de datos
+		/// Consulta las sedes que tiene una region en la base de datos
 		/// </summary>
 		/// <returns>Una lista de Sedes</returns>
-		public List<Sede> SELECT()
+		public List<Sede> SELECT_FOR_REGION(int idRegion)
 		{
 			MySqlConnection conn = Connection.Conn();
 			List<Sede> ltsSedes = null;
 			try
 			{
-				String cmdStr = "SELECT * FROM SEDES";
+				String cmdStr = "SELECT * FROM SEDES WHERE idRegion=@id";
 				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
-
+				cmd.Parameters.AddWithValue("@id",idRegion);
 				MySqlDataReader dr = cmd.ExecuteReader();
 				ltsSedes = new List<Sede>();
 

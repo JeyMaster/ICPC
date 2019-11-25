@@ -22,7 +22,7 @@ namespace Modelo
 			Contrasenia = contrasenia;
 		}
 
-		public String Rol { get; set; }
+
 		public String Email { get; set; }
 		public String Contrasenia { get; set; }
 		public String Titulo { get; set; }
