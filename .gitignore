@@ -340,5 +340,9 @@ ASALocalRun/
 healthchecksdb
 
 #Carpetas
-bin/
-obj/
+DAOS/bin/
+DAOS/obj/
+Modelo/bin/
+Modelo/obj/
+Vistas/bin/
+Vistas/obj/
