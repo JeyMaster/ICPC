@@ -62,12 +62,16 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvConcursos
             // 
+            this.dgvConcursos.AllowUserToAddRows = false;
+            this.dgvConcursos.AllowUserToDeleteRows = false;
             this.dgvConcursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConcursos.Location = new System.Drawing.Point(116, 7);
             this.dgvConcursos.Name = "dgvConcursos";
+            this.dgvConcursos.ReadOnly = true;
             this.dgvConcursos.Size = new System.Drawing.Size(635, 437);
             this.dgvConcursos.TabIndex = 10;
             this.dgvConcursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConcursos_CellClick);

@@ -21,11 +21,8 @@ namespace Vistas
         DaoConcurso objDaoConcuro = new DaoConcurso();
         private void FrmAdminConcursos_Load(object sender, EventArgs e)
         {
-           
-            List<Concurso> ltsConcursos = objDaoConcuro.SELECT_ALL();
-            dgvConcursos.DataSource = ltsConcursos;
-
-
+            CargarTabla();
+            
 
         }
         String rowclicked;
@@ -34,7 +31,7 @@ namespace Vistas
         {
              rowclicked=dgvConcursos.CurrentCell.RowIndex.ToString();
             idConcursoXfila= dgvConcursos.Rows[Int32.Parse(rowclicked)].Cells[0].Value.ToString();
-            MessageBox.Show(idConcursoXfila);
+            //MessageBox.Show(idConcursoXfila);
 
         }
 
@@ -42,6 +39,19 @@ namespace Vistas
         {
             Concurso concursoAEditar = objDaoConcuro.SELECT(Int32.Parse(idConcursoXfila));
             new FrmAgregarEditarConcursos(concursoAEditar).ShowDialog();
+            CargarTabla();
+            
+        }
+        public void CargarTabla() {
+            List<Concurso> ltsConcursos = objDaoConcuro.SELECT_ALL();
+            dgvConcursos.DataSource = ltsConcursos;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+           
+            new FrmAgregarEditarConcursos().ShowDialog();
+            CargarTabla();
         }
     }
 }

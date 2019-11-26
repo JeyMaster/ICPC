@@ -43,7 +43,7 @@
             this.txtLocacion = new System.Windows.Forms.TextBox();
             this.txtInfoFacturacion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -166,22 +166,24 @@
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnRegresar
+            // btnGuardarCambios
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(138, 210);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(100, 23);
-            this.btnRegresar.TabIndex = 15;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Location = new System.Drawing.Point(138, 210);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(100, 23);
+            this.btnGuardarCambios.TabIndex = 15;
+            this.btnGuardarCambios.Text = "Guardar Cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // FrmAgregarEditarConcursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 250);
-            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtInfoFacturacion);
             this.Controls.Add(this.txtLocacion);
@@ -199,6 +201,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAgregarEditarConcursos";
             this.Text = "AgregarEditarConcursos";
+            this.Load += new System.EventHandler(this.FrmAgregarEditarConcursos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +224,6 @@
         private System.Windows.Forms.TextBox txtLocacion;
         private System.Windows.Forms.TextBox txtInfoFacturacion;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnGuardarCambios;
     }
 }
