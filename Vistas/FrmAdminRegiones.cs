@@ -18,17 +18,22 @@ namespace Vistas
         public FrmAdminRegiones()
         {
             InitializeComponent();
+			cargarTabla();
 
         }
 
+		private void cargarTabla()
+		{
+			List<Modelo.Region> ltsregiones = new DaoRegion().SELECT();
+
+			dgvRegiones.DataSource = null;
+			dgvRegiones.DataSource = ltsregiones;
+		}
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            Modelo.Region nreg = new Modelo.Region();
-            nreg.Nombre = "Europa";
-            int res = objDaoRegiones.INSERT(nreg);
-            if (res == 1)
-            { MessageBox.Show("datos insertados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+			new FrmAgregarEditarRegiones(null).ShowDialog();
+			cargarTabla();
         }
     }
 }

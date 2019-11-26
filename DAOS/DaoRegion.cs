@@ -27,12 +27,9 @@ namespace DAOS
 
                 cmd.CommandText = "AgregarRegion";
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@nombre_region", objRegion.Nombre);
-                cmd.Parameters["@nombre_region"].Direction = ParameterDirection.Input;
-
-
+				cmd.Parameters.AddWithValue("nombre_region", objRegion.Nombre);
                 cmd.ExecuteNonQuery();
+
             }
 			catch (MySqlException ex)
 			{
@@ -57,8 +54,9 @@ namespace DAOS
 
 			try
 			{
-				String strCmd = "CALL SeleccionarRegiones();";
+				String strCmd = "SeleccionarRegiones";
 				MySqlCommand cmd = new MySqlCommand(strCmd, conn);
+				cmd.CommandType = CommandType.StoredProcedure;
 				MySqlDataReader dr = cmd.ExecuteReader();
 				ltsRegiones = new List<Region>();
 				while (dr.Read())
