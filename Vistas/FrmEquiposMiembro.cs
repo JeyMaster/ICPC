@@ -16,5 +16,11 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+		private void cargarconcursos()
+		{
+
+		}
+
     }
 }

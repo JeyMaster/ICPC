@@ -34,14 +34,23 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnAgregarIntegrante = new System.Windows.Forms.Button();
-			this.dgvIntegrantes = new System.Windows.Forms.DataGridView();
-			this.btnCancelar = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.cbRegiones = new System.Windows.Forms.ComboBox();
 			this.cbSedes = new System.Windows.Forms.ComboBox();
 			this.cbConcursos = new System.Windows.Forms.ComboBox();
 			this.cbInstituciones = new System.Windows.Forms.ComboBox();
 			this.txtNombreEquipo = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.cbIntegrante = new System.Windows.Forms.ComboBox();
+			this.cbRol = new System.Windows.Forms.ComboBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.btnEditar = new System.Windows.Forms.Button();
+			this.btnEliminar = new System.Windows.Forms.Button();
+			this.dgvIntegrantes = new System.Windows.Forms.DataGridView();
+			this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvIntegrantes)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -72,7 +81,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(12, 75);
+			this.label3.Location = new System.Drawing.Point(12, 146);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(170, 18);
 			this.label3.TabIndex = 2;
@@ -83,7 +92,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.White;
-			this.label4.Location = new System.Drawing.Point(296, 75);
+			this.label4.Location = new System.Drawing.Point(12, 75);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(167, 18);
 			this.label4.TabIndex = 3;
@@ -94,7 +103,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.White;
-			this.label5.Location = new System.Drawing.Point(12, 146);
+			this.label5.Location = new System.Drawing.Point(296, 146);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(211, 18);
 			this.label5.TabIndex = 4;
@@ -107,36 +116,13 @@
 			this.btnAgregarIntegrante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAgregarIntegrante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAgregarIntegrante.ForeColor = System.Drawing.Color.White;
-			this.btnAgregarIntegrante.Location = new System.Drawing.Point(351, 162);
+			this.btnAgregarIntegrante.Location = new System.Drawing.Point(392, 263);
 			this.btnAgregarIntegrante.Name = "btnAgregarIntegrante";
-			this.btnAgregarIntegrante.Size = new System.Drawing.Size(190, 35);
+			this.btnAgregarIntegrante.Size = new System.Drawing.Size(184, 35);
 			this.btnAgregarIntegrante.TabIndex = 8;
 			this.btnAgregarIntegrante.Text = "Agregar Integrante";
 			this.btnAgregarIntegrante.UseVisualStyleBackColor = true;
-			// 
-			// dgvIntegrantes
-			// 
-			this.dgvIntegrantes.BackgroundColor = System.Drawing.Color.BlueViolet;
-			this.dgvIntegrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvIntegrantes.GridColor = System.Drawing.Color.BlueViolet;
-			this.dgvIntegrantes.Location = new System.Drawing.Point(15, 236);
-			this.dgvIntegrantes.Name = "dgvIntegrantes";
-			this.dgvIntegrantes.Size = new System.Drawing.Size(561, 179);
-			this.dgvIntegrantes.TabIndex = 9;
-			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-			this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-			this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCancelar.ForeColor = System.Drawing.Color.White;
-			this.btnCancelar.Location = new System.Drawing.Point(15, 432);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(132, 32);
-			this.btnCancelar.TabIndex = 10;
-			this.btnCancelar.Text = "Cancelar";
-			this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnAgregarIntegrante.Click += new System.EventHandler(this.btnAgregarIntegrante_Click);
 			// 
 			// btnAgregar
 			// 
@@ -145,12 +131,13 @@
 			this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAgregar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAgregar.ForeColor = System.Drawing.Color.White;
-			this.btnAgregar.Location = new System.Drawing.Point(443, 432);
+			this.btnAgregar.Location = new System.Drawing.Point(479, 558);
 			this.btnAgregar.Name = "btnAgregar";
-			this.btnAgregar.Size = new System.Drawing.Size(133, 32);
+			this.btnAgregar.Size = new System.Drawing.Size(152, 32);
 			this.btnAgregar.TabIndex = 11;
-			this.btnAgregar.Text = "Agregar";
+			this.btnAgregar.Text = "Crear equipo";
 			this.btnAgregar.UseVisualStyleBackColor = true;
+			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
 			// 
 			// cbRegiones
 			// 
@@ -182,7 +169,7 @@
 			this.cbConcursos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbConcursos.ForeColor = System.Drawing.Color.Black;
 			this.cbConcursos.FormattingEnabled = true;
-			this.cbConcursos.Location = new System.Drawing.Point(15, 96);
+			this.cbConcursos.Location = new System.Drawing.Point(15, 167);
 			this.cbConcursos.Name = "cbConcursos";
 			this.cbConcursos.Size = new System.Drawing.Size(259, 26);
 			this.cbConcursos.TabIndex = 14;
@@ -193,34 +180,170 @@
 			this.cbInstituciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbInstituciones.ForeColor = System.Drawing.Color.Black;
 			this.cbInstituciones.FormattingEnabled = true;
-			this.cbInstituciones.Location = new System.Drawing.Point(299, 96);
+			this.cbInstituciones.Location = new System.Drawing.Point(15, 96);
 			this.cbInstituciones.Name = "cbInstituciones";
-			this.cbInstituciones.Size = new System.Drawing.Size(277, 26);
+			this.cbInstituciones.Size = new System.Drawing.Size(259, 26);
 			this.cbInstituciones.TabIndex = 15;
 			// 
 			// txtNombreEquipo
 			// 
 			this.txtNombreEquipo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNombreEquipo.ForeColor = System.Drawing.Color.Black;
-			this.txtNombreEquipo.Location = new System.Drawing.Point(12, 167);
+			this.txtNombreEquipo.Location = new System.Drawing.Point(299, 167);
 			this.txtNombreEquipo.Name = "txtNombreEquipo";
-			this.txtNombreEquipo.Size = new System.Drawing.Size(262, 26);
+			this.txtNombreEquipo.Size = new System.Drawing.Size(277, 26);
 			this.txtNombreEquipo.TabIndex = 16;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.White;
+			this.label6.Location = new System.Drawing.Point(296, 99);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(131, 18);
+			this.label6.TabIndex = 17;
+			this.label6.Text = "Fecha de registro";
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateTimePicker1.Location = new System.Drawing.Point(447, 96);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(102, 26);
+			this.dateTimePicker1.TabIndex = 18;
+			this.dateTimePicker1.Value = new System.DateTime(2019, 11, 25, 16, 51, 28, 0);
+			// 
+			// cbIntegrante
+			// 
+			this.cbIntegrante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbIntegrante.FormattingEnabled = true;
+			this.cbIntegrante.Location = new System.Drawing.Point(105, 228);
+			this.cbIntegrante.Name = "cbIntegrante";
+			this.cbIntegrante.Size = new System.Drawing.Size(238, 26);
+			this.cbIntegrante.TabIndex = 19;
+			this.cbIntegrante.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cbIntegrante_KeyUp);
+			// 
+			// cbRol
+			// 
+			this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbRol.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbRol.FormattingEnabled = true;
+			this.cbRol.Items.AddRange(new object[] {
+            "Couch",
+            "Co-Couch",
+            "Participante",
+            "Reserva"});
+			this.cbRol.Location = new System.Drawing.Point(105, 272);
+			this.cbRol.Name = "cbRol";
+			this.cbRol.Size = new System.Drawing.Size(128, 26);
+			this.cbRol.TabIndex = 20;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.ForeColor = System.Drawing.Color.White;
+			this.label7.Location = new System.Drawing.Point(19, 231);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(62, 18);
+			this.label7.TabIndex = 21;
+			this.label7.Text = "Usuario";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.ForeColor = System.Drawing.Color.White;
+			this.label8.Location = new System.Drawing.Point(50, 275);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(31, 18);
+			this.label8.TabIndex = 22;
+			this.label8.Text = "Rol";
+			// 
+			// btnEditar
+			// 
+			this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+			this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+			this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEditar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEditar.ForeColor = System.Drawing.Color.White;
+			this.btnEditar.Location = new System.Drawing.Point(74, 451);
+			this.btnEditar.Name = "btnEditar";
+			this.btnEditar.Size = new System.Drawing.Size(141, 35);
+			this.btnEditar.TabIndex = 23;
+			this.btnEditar.Text = "Editar";
+			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+			// 
+			// btnEliminar
+			// 
+			this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+			this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+			this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEliminar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEliminar.ForeColor = System.Drawing.Color.White;
+			this.btnEliminar.Location = new System.Drawing.Point(74, 492);
+			this.btnEliminar.Name = "btnEliminar";
+			this.btnEliminar.Size = new System.Drawing.Size(141, 35);
+			this.btnEliminar.TabIndex = 24;
+			this.btnEliminar.Text = "Eliminar";
+			this.btnEliminar.UseVisualStyleBackColor = true;
+			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+			// 
+			// dgvIntegrantes
+			// 
+			this.dgvIntegrantes.AllowUserToAddRows = false;
+			this.dgvIntegrantes.AllowUserToDeleteRows = false;
+			this.dgvIntegrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvIntegrantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colEmail,
+            this.colRol});
+			this.dgvIntegrantes.Location = new System.Drawing.Point(239, 318);
+			this.dgvIntegrantes.Name = "dgvIntegrantes";
+			this.dgvIntegrantes.ReadOnly = true;
+			this.dgvIntegrantes.Size = new System.Drawing.Size(392, 209);
+			this.dgvIntegrantes.TabIndex = 25;
+			this.dgvIntegrantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIntegrantes_CellClick_1);
+			// 
+			// colEmail
+			// 
+			this.colEmail.DataPropertyName = "Email";
+			this.colEmail.HeaderText = "Email";
+			this.colEmail.Name = "colEmail";
+			this.colEmail.ReadOnly = true;
+			this.colEmail.Width = 240;
+			// 
+			// colRol
+			// 
+			this.colRol.DataPropertyName = "Rol";
+			this.colRol.HeaderText = "Rol";
+			this.colRol.Name = "colRol";
+			this.colRol.ReadOnly = true;
 			// 
 			// FrmCrearEquipo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
-			this.ClientSize = new System.Drawing.Size(594, 476);
+			this.ClientSize = new System.Drawing.Size(669, 611);
+			this.Controls.Add(this.dgvIntegrantes);
+			this.Controls.Add(this.btnEliminar);
+			this.Controls.Add(this.btnEditar);
+			this.Controls.Add(this.label8);
+			this.Controls.Add(this.label7);
+			this.Controls.Add(this.cbRol);
+			this.Controls.Add(this.cbIntegrante);
+			this.Controls.Add(this.dateTimePicker1);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txtNombreEquipo);
 			this.Controls.Add(this.cbInstituciones);
 			this.Controls.Add(this.cbConcursos);
 			this.Controls.Add(this.cbSedes);
 			this.Controls.Add(this.cbRegiones);
 			this.Controls.Add(this.btnAgregar);
-			this.Controls.Add(this.btnCancelar);
-			this.Controls.Add(this.dgvIntegrantes);
 			this.Controls.Add(this.btnAgregarIntegrante);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
@@ -245,13 +368,22 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAgregarIntegrante;
-        private System.Windows.Forms.DataGridView dgvIntegrantes;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox cbRegiones;
         private System.Windows.Forms.ComboBox cbSedes;
         private System.Windows.Forms.ComboBox cbConcursos;
         private System.Windows.Forms.ComboBox cbInstituciones;
         private System.Windows.Forms.TextBox txtNombreEquipo;
-    }
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.ComboBox cbIntegrante;
+		private System.Windows.Forms.ComboBox cbRol;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Button btnEditar;
+		private System.Windows.Forms.Button btnEliminar;
+		private System.Windows.Forms.DataGridView dgvIntegrantes;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colRol;
+	}
 }

@@ -8,6 +8,6 @@ namespace Modelo
 	{
 		public int IdEquipo { get; set; }
 		public String Email { get; set; }
-		public int Rol { get; set; }
+		public String Rol { get; set; }
 	}
 }

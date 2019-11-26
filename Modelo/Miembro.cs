@@ -42,5 +42,10 @@ namespace Modelo
 		public String NecesidadesEspeciales { get; set; }
 		public String EmailSecundario { get; set; }
 
+		override
+		public String ToString()
+		{
+			return Email;
+		}
 	}
 }
