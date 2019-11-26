@@ -266,5 +266,46 @@ namespace DAOS
 
 			return done;
 		}
+
+		/// <summary>
+		/// Retorna los emails de los miembros que empiezen por el valor indicado
+		/// en el nombre o en el email
+		/// </summary>
+		/// <param name="value">Valor por el cual buscar</param>
+		/// <returns>Miembros con emails</returns>
+		public List<Miembro> SELECT_FOR_SEARCH(String value)
+		{
+			List<Miembro> ltsMiembros=null;
+			MySqlConnection conn = Connection.Conn();
+			try
+			{
+				String strCmd = "select email,nombre from Miembros where email like @value '%' or nombre like @value '%'";
+				MySqlCommand cmd = new MySqlCommand(strCmd,conn);
+				cmd.Parameters.AddWithValue("@value",value);
+
+				MySqlDataReader dr = cmd.ExecuteReader();
+				ltsMiembros = new List<Miembro>();
+				while (dr.Read())
+				{
+					Miembro objMiembro = new Miembro();
+					objMiembro.Email = dr[0].ToString();
+					objMiembro.Nombre = dr[1].ToString();
+					ltsMiembros.Add(objMiembro);
+				}
+			}
+			catch (MySqlException ex)
+			{
+				Console.WriteLine(ex.ToString());
+				ltsMiembros = null;
+			}
+			finally
+			{
+				conn.Close();
+				conn.Dispose();
+			}
+
+			return ltsMiembros;
+
+		}
 	}
 }

@@ -71,6 +71,7 @@
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(244, 26);
 			this.txtEmail.TabIndex = 2;
+			this.txtEmail.Text = "neomix5000@gmail.com";
 			// 
 			// txtContrasena
 			// 
@@ -79,6 +80,7 @@
 			this.txtContrasena.Name = "txtContrasena";
 			this.txtContrasena.Size = new System.Drawing.Size(244, 26);
 			this.txtContrasena.TabIndex = 3;
+			this.txtContrasena.Text = "1234";
 			// 
 			// btnRegistrarse
 			// 
