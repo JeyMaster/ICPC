@@ -94,9 +94,10 @@ namespace DAOS
 			Region objRegiones = null;
 			try
 			{
-				String strCmd = "CALL SeleccionarRegionesPorId(@id)";
+				String strCmd = "SeleccionarRegionesPorId";
 				MySqlCommand cmd = new MySqlCommand(strCmd, conn);
-				cmd.Parameters.AddWithValue("@id", idRegion);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.AddWithValue("Id_Region", idRegion);
 				MySqlDataReader dr = cmd.ExecuteReader();
 		
 				while (dr.Read())
@@ -129,10 +130,11 @@ namespace DAOS
 			MySqlConnection conn = Connection.Conn();
 			try
 			{
-				String strComm = "CALL EditarRegiones(@id,@nombre)";
+				String strComm = "EditarRegiones";
 				MySqlCommand cmd = new MySqlCommand(strComm, conn);
-				cmd.Parameters.AddWithValue("@nombre", objRegion.Nombre);
-				cmd.Parameters.AddWithValue("@id", objRegion.IdRegion);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.AddWithValue("Id_Region", objRegion.Nombre);
+				cmd.Parameters.AddWithValue("nombre_region", objRegion.IdRegion);
 				cmd.ExecuteNonQuery();
 
 				done = true;
@@ -162,9 +164,10 @@ namespace DAOS
 			MySqlConnection conn = Connection.Conn();
 			try
 			{
-				String strComm = "CALL EliminarRegiones(@id)";
+				String strComm = "EliminarRegiones";
 				MySqlCommand cmd = new MySqlCommand(strComm, conn);
-				cmd.Parameters.AddWithValue("@id",IdRegion);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.AddWithValue("Id_Region", IdRegion);
 				cmd.ExecuteNonQuery();
 
 				done = true;

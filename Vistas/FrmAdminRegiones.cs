@@ -21,7 +21,7 @@ namespace Vistas
 			cargarTabla();
 
         }
-
+		private int index;
 		private void cargarTabla()
 		{
 			List<Modelo.Region> ltsregiones = new DaoRegion().SELECT();
@@ -35,5 +35,19 @@ namespace Vistas
 			new FrmAgregarEditarRegiones(null).ShowDialog();
 			cargarTabla();
         }
-    }
+
+		private void btnEditar_Click(object sender, EventArgs e)
+		{
+			Modelo.Region region = new Modelo.Region();
+			region.IdRegion = (int)dgvRegiones[0, index].Value;
+			region.Nombre = dgvRegiones[1, index].Value.ToString();
+			new FrmAgregarEditarRegiones(region).ShowDialog();
+			cargarTabla();
+		}
+
+		private void dgvRegiones_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			index = dgvRegiones.CurrentRow.Index;
+		}
+	}
 }
