@@ -38,7 +38,6 @@ C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.exe
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.pdb
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmPerfilMiembro.resources
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminConcursos.resources
-C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminEquipos.resources
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminInstituciones.resources
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminRegiones.resources
 C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAdminSedes.resources
@@ -58,3 +57,8 @@ C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarConcurs
 C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarInstituciones.resources
 C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarRegiones.resources
 C:\Users\arman\source\repos\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarSedes.resources
+C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmEquiposMiembro.resources
+C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarConcursos.resources
+C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarInstituciones.resources
+C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarRegiones.resources
+C:\Users\beton\Desktop\ProyRegICPC\ICPC\Vistas\obj\Debug\Vistas.FrmAgregarEditarSedes.resources
