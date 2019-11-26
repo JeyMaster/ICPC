@@ -19,12 +19,13 @@ namespace DAOS
 			int done = 0;
 			try
 			{
-				String cmdStr = "INSERT INTO INSTITUCIONES(nombreCompleto,nombreCorto,paginaWeb,gradoOfrecido," +
+				String cmdStr = "INSERT INTO INSTITUCIONES(idRegion,nombreCompleto,nombreCorto,paginaWeb,gradoOfrecido," +
 					"companiaCalle,ciudad,state,lineaDeCalle2,codigoPostal,estado,lineaDeCalle3) " +
-					"VALUES(@nombreCompleto,@nombreCorto,@paginaWeb,@gradoOfrecido,@companiaCalle," +
+					"VALUES(@idRegion,@nombreCompleto,@nombreCorto,@paginaWeb,@gradoOfrecido,@companiaCalle," +
 					"@ciudad,@state,@lineaDeCalle2,@codigoPostal,@estado,@lineaDeCalle3)";
 				MySqlCommand cmd = new MySqlCommand(cmdStr,conn);
-				cmd.Parameters.AddWithValue("@nombreCompleto",objInstitucion.NombreCompleto);
+                cmd.Parameters.AddWithValue("@idRegion", objInstitucion.IdRegion);
+                cmd.Parameters.AddWithValue("@nombreCompleto",objInstitucion.NombreCompleto);
 				cmd.Parameters.AddWithValue("@nombreCorto",objInstitucion.NombreCorto);
 				cmd.Parameters.AddWithValue("@paginaWeb",objInstitucion.PaginaWeb);
 				cmd.Parameters.AddWithValue("@gradoOfrecido",objInstitucion.GradoOfrecido);
@@ -73,7 +74,8 @@ namespace DAOS
 					Institucion objInstitucion = new Institucion();
 
 					objInstitucion.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
-					objInstitucion.NombreCompleto = dr[1].ToString();
+                    objInstitucion.IdRegion = int.Parse(dr["idRegion"].ToString());
+                    objInstitucion.NombreCompleto = dr[1].ToString();
 					objInstitucion.NombreCorto = dr[2].ToString();
 					objInstitucion.PaginaWeb = dr[3].ToString();
 					objInstitucion.GradoOfrecido = dr[4].ToString();
@@ -124,7 +126,8 @@ namespace DAOS
 				{
 			
 					objInstitucion.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
-					objInstitucion.NombreCompleto = dr[1].ToString();
+                    objInstitucion.IdRegion = int.Parse(dr["idRegion"].ToString());
+                    objInstitucion.NombreCompleto = dr[1].ToString();
 					objInstitucion.NombreCorto = dr[2].ToString();
 					objInstitucion.PaginaWeb = dr[3].ToString();
 					objInstitucion.GradoOfrecido = dr[4].ToString();
@@ -167,7 +170,7 @@ namespace DAOS
 				String cmdStr = "UPDATE INSTITUCIONES SET nombreCompleto=@nombreCompleto,nombreCorto=@nombreCorto," +
 					"paginaWeb=@paginaWeb,gradoOfrecido=@gradoOfrecido,companiaCalle=@companiaCalle,ciudad=@ciudad," +
 					"state=@state,lineaDeCalle2=@lineaDeCalle2,codigoPostal=@codigoPostal,estado=@estado," +
-					"lineaDeCalle3=@lineaDeCalle3 WHERE idInstitucion=@id";
+					"lineaDeCalle3=@lineaDeCalle3,idRegion=@idRegion WHERE idInstitucion=@id";
 				MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
 
 				cmd.Parameters.AddWithValue("@id", objInstitucion.IdInstitucion);
@@ -182,8 +185,9 @@ namespace DAOS
 				cmd.Parameters.AddWithValue("@codigoPostal", objInstitucion.CodigoPostal);
 				cmd.Parameters.AddWithValue("@estado", objInstitucion.Estado);
 				cmd.Parameters.AddWithValue("@lineaDeCalle3", objInstitucion.LineaDeCalle_3);
+                cmd.Parameters.AddWithValue("@idRegion", objInstitucion.IdRegion);
 
-				cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
 				done = true;
 			}

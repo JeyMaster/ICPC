@@ -39,6 +39,7 @@ namespace Vistas
             {
                 this.Text = "Editar";
                 txtIdInstitucion.Text = institucionAEditar.IdInstitucion.ToString();
+                txtIdRegion.Text = institucionAEditar.IdRegion.ToString();
                 txtNombreCompleto.Text =institucionAEditar.NombreCompleto;
                 txtNombreCorto.Text = institucionAEditar.NombreCorto;
                 txtPaginaWeb.Text = institucionAEditar.PaginaWeb;
@@ -72,18 +73,18 @@ namespace Vistas
         {
             if (editar)
             {
-                
-                 institucionAEditar.NombreCompleto = txtNombreCompleto.Text;
-                 institucionAEditar.NombreCorto = txtNombreCorto.Text;
-                 institucionAEditar.PaginaWeb = txtPaginaWeb.Text;
-                 institucionAEditar.GradoOfrecido = txtGradoOfrecido.Text;
-                 institucionAEditar.CompaniaCalle = txtCompañiaCalle.Text;
-                 institucionAEditar.State = txtState.Text;
-                 institucionAEditar.Ciudad = txtCiudad.Text;
-                 institucionAEditar.CodigoPostal = txtCodigoPostal.Text;
-                 institucionAEditar.LineaDeCalle_2 = txtLineaDeCalle2.Text;
-                 institucionAEditar.LineaDeCalle_3 = txtLineaDeCalle3.Text;
-                 institucionAEditar.Estado = txtEstado.Text;
+                institucionAEditar.IdRegion = Int32.Parse(txtIdRegion.Text);
+                institucionAEditar.NombreCompleto = txtNombreCompleto.Text;
+                institucionAEditar.NombreCorto = txtNombreCorto.Text;
+                institucionAEditar.PaginaWeb = txtPaginaWeb.Text;
+                institucionAEditar.GradoOfrecido = txtGradoOfrecido.Text;
+                institucionAEditar.CompaniaCalle = txtCompañiaCalle.Text;
+                institucionAEditar.State = txtState.Text;
+                institucionAEditar.Ciudad = txtCiudad.Text;
+                institucionAEditar.CodigoPostal = txtCodigoPostal.Text;
+                institucionAEditar.LineaDeCalle_2 = txtLineaDeCalle2.Text;
+                institucionAEditar.LineaDeCalle_3 = txtLineaDeCalle3.Text;
+                institucionAEditar.Estado = txtEstado.Text;
 
                 bool res = objDaoInstitucion.UPDATE(institucionAEditar);
                 if (res)
@@ -98,6 +99,7 @@ namespace Vistas
             }
             else
             {
+                InstitucionAAgregar.IdRegion = Int32.Parse( txtIdRegion.Text);
                 InstitucionAAgregar.NombreCompleto = txtNombreCompleto.Text;
                 InstitucionAAgregar.NombreCorto = txtNombreCorto.Text;
                 InstitucionAAgregar.PaginaWeb = txtPaginaWeb.Text;
