@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
 using Modelo;
+using System.Data;
 
 namespace DAOS
 {
@@ -17,15 +18,22 @@ namespace DAOS
 		{
 			int done=0;
 			MySqlConnection conn = Connection.Conn();
-			try
-			{
-				String strComm = "INSERT INTO REGIONES(Nombre) VALUES(@nombre)";
-				MySqlCommand cmd = new MySqlCommand(strComm,conn);
-				cmd.Parameters.AddWithValue("@nombre", objRegion.Nombre);
-				cmd.ExecuteNonQuery();
+            MySqlCommand cmd=new MySqlCommand();
 
-				done=(int)cmd.LastInsertedId;
-			}
+            try
+			{
+             
+                cmd.Connection = conn;
+
+                cmd.CommandText = "AgregarRegion";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@nombre_region", objRegion.Nombre);
+                cmd.Parameters["@nombre_region"].Direction = ParameterDirection.Input;
+
+
+                cmd.ExecuteNonQuery();
+            }
 			catch (MySqlException ex)
 			{
 				Console.WriteLine(ex.ToString());
@@ -49,7 +57,7 @@ namespace DAOS
 
 			try
 			{
-				String strCmd = "SELECT * FROM REGIONES";
+				String strCmd = "CALL SeleccionarRegiones();";
 				MySqlCommand cmd = new MySqlCommand(strCmd, conn);
 				MySqlDataReader dr = cmd.ExecuteReader();
 				ltsRegiones = new List<Region>();
@@ -88,7 +96,7 @@ namespace DAOS
 			Region objRegiones = null;
 			try
 			{
-				String strCmd = "SELECT * FROM REGIONES WHERE idRegion=@id";
+				String strCmd = "CALL SeleccionarRegionesPorId(@id)";
 				MySqlCommand cmd = new MySqlCommand(strCmd, conn);
 				cmd.Parameters.AddWithValue("@id", idRegion);
 				MySqlDataReader dr = cmd.ExecuteReader();
@@ -123,7 +131,7 @@ namespace DAOS
 			MySqlConnection conn = Connection.Conn();
 			try
 			{
-				String strComm = "UPDATE REGIONES SET nombre=@nombre where idRegion=@id";
+				String strComm = "CALL EditarRegiones(@id,@nombre)";
 				MySqlCommand cmd = new MySqlCommand(strComm, conn);
 				cmd.Parameters.AddWithValue("@nombre", objRegion.Nombre);
 				cmd.Parameters.AddWithValue("@id", objRegion.IdRegion);
@@ -156,7 +164,7 @@ namespace DAOS
 			MySqlConnection conn = Connection.Conn();
 			try
 			{
-				String strComm = "DELETE FROM REGIONES WHERE idRegion=@id";
+				String strComm = "CALL EliminarRegiones(@id)";
 				MySqlCommand cmd = new MySqlCommand(strComm, conn);
 				cmd.Parameters.AddWithValue("@id",IdRegion);
 				cmd.ExecuteNonQuery();
