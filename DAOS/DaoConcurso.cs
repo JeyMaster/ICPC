@@ -8,12 +8,52 @@ namespace DAOS
 {
 	public class DaoConcurso
 	{
+        /// <summary>
+        /// Consulta todos los concursos de la tabla concursos
+        /// </summary>
+        /// <returns>Una lista de concursos</returns>
+        public List<Concurso> SELECT_ALL()
+        {
+            List<Concurso> ltsConcursos = null;
+            MySqlConnection conn = Connection.Conn();
 
-		/// <summary>
-		/// Consulta los concursos que tiene una sede a la base de datos
-		/// </summary>
-		/// <returns>Una lista de concursos</returns>
-		public List<Concurso> SELECT_FOR_SEDE(int idSede)
+            try
+            {
+                String cmdStr = "SELECT * FROM CONCURSOS";
+                MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                ltsConcursos = new List<Concurso>();
+                while (dr.Read())
+                {
+                    Concurso objConcurso = new Concurso();
+                    objConcurso.IdConcurso = int.Parse(dr["idConcurso"].ToString());
+                    objConcurso.IdSede = int.Parse(dr["idSede"].ToString());
+                    objConcurso.Titulo = dr["titulo"].ToString();
+                    objConcurso.Locacion = dr["locacion"].ToString();
+                    objConcurso.Nombre = dr["nombre"].ToString();
+                    objConcurso.InfoFacturacion = dr["infoFacturacion"].ToString();
+                    objConcurso.Email = dr["email"].ToString();
+
+                    ltsConcursos.Add(objConcurso);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                ltsConcursos = null;
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+            return ltsConcursos;
+        }
+        /// <summary>
+        /// Consulta los concursos que tiene una sede a la base de datos
+        /// </summary>
+        /// <returns>Una lista de concursos</returns>
+        public List<Concurso> SELECT_FOR_SEDE(int idSede)
 		{
 			List<Concurso> ltsConcursos = null;
 			MySqlConnection conn = Connection.Conn();

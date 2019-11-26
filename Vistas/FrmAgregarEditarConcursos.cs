@@ -12,7 +12,7 @@ namespace Vistas
 {
     public partial class FrmAgregarEditarConcursos : Form
     {
-        public FrmAgregarEditarConcursos()
+        public FrmAgregarEditarConcursos(Modelo.Concurso concursoAEditar)
         {
             InitializeComponent();
         }
