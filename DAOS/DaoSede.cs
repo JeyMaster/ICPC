@@ -41,12 +41,50 @@ namespace DAOS
 
 			return done;
 		}
+        /// <summary>
+        /// Regresa un select de todas las sedes de la base de datos
+        /// </summary>
+        /// <returns>lista de sedes</returns>
+        public List<Sede> SELECT_ALL()
+        {
+            List<Sede> ltsSede = null;
+            MySqlConnection conn = Connection.Conn();
 
-		/// <summary>
-		/// Consulta las sedes que tiene una region en la base de datos
-		/// </summary>
-		/// <returns>Una lista de Sedes</returns>
-		public List<Sede> SELECT_FOR_REGION(int idRegion)
+            try
+            {
+                String cmdStr = "SELECT * FROM SEDES";
+                MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                ltsSede = new List<Sede>();
+                while (dr.Read())
+                {
+                    Sede objSede = new Sede();
+                    objSede.IdSede = int.Parse(dr["idSede"].ToString());
+                    objSede.IdRegion = int.Parse(dr["idRegion"].ToString());
+                    objSede.Nombre = dr["nombre"].ToString();
+                    
+
+                    ltsSede.Add(objSede);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                ltsSede = null;
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+            return ltsSede;
+        }
+
+        /// <summary>
+        /// Consulta las sedes que tiene una region en la base de datos
+        /// </summary>
+        /// <returns>Una lista de Sedes</returns>
+        public List<Sede> SELECT_FOR_REGION(int idRegion)
 		{
 			MySqlConnection conn = Connection.Conn();
 			List<Sede> ltsSedes = null;

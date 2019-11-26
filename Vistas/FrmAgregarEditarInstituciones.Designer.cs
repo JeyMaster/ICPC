@@ -53,7 +53,7 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtLineaDeCalle3 = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtAceptar = new System.Windows.Forms.Button();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,14 +61,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "idIndtitucion:";
+            this.label1.Text = "idInstitucion:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 48);
+            this.label2.Location = new System.Drawing.Point(140, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 1;
@@ -77,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 87);
+            this.label3.Location = new System.Drawing.Point(9, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
@@ -86,7 +86,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 126);
+            this.label4.Location = new System.Drawing.Point(140, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 3;
@@ -95,7 +95,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 165);
+            this.label5.Location = new System.Drawing.Point(8, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 4;
@@ -104,7 +104,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 204);
+            this.label6.Location = new System.Drawing.Point(139, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 5;
@@ -113,7 +113,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 243);
+            this.label7.Location = new System.Drawing.Point(140, 160);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 6;
@@ -122,7 +122,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 282);
+            this.label8.Location = new System.Drawing.Point(9, 160);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 7;
@@ -131,7 +131,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 321);
+            this.label9.Location = new System.Drawing.Point(140, 207);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 13);
             this.label9.TabIndex = 8;
@@ -140,7 +140,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 360);
+            this.label10.Location = new System.Drawing.Point(5, 207);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 9;
@@ -149,7 +149,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 399);
+            this.label11.Location = new System.Drawing.Point(143, 252);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 13);
             this.label11.TabIndex = 10;
@@ -158,7 +158,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 438);
+            this.label12.Location = new System.Drawing.Point(9, 252);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 13);
             this.label12.TabIndex = 11;
@@ -173,105 +173,107 @@
             // 
             // txtNombreCompleto
             // 
-            this.txtNombreCompleto.Location = new System.Drawing.Point(12, 64);
+            this.txtNombreCompleto.Location = new System.Drawing.Point(143, 25);
             this.txtNombreCompleto.Name = "txtNombreCompleto";
             this.txtNombreCompleto.Size = new System.Drawing.Size(100, 20);
             this.txtNombreCompleto.TabIndex = 13;
             // 
             // txtNombreCorto
             // 
-            this.txtNombreCorto.Location = new System.Drawing.Point(12, 103);
+            this.txtNombreCorto.Location = new System.Drawing.Point(12, 72);
             this.txtNombreCorto.Name = "txtNombreCorto";
             this.txtNombreCorto.Size = new System.Drawing.Size(100, 20);
             this.txtNombreCorto.TabIndex = 14;
             // 
             // txtPaginaWeb
             // 
-            this.txtPaginaWeb.Location = new System.Drawing.Point(12, 142);
+            this.txtPaginaWeb.Location = new System.Drawing.Point(143, 72);
             this.txtPaginaWeb.Name = "txtPaginaWeb";
             this.txtPaginaWeb.Size = new System.Drawing.Size(100, 20);
             this.txtPaginaWeb.TabIndex = 15;
             // 
             // txtGradoOfrecido
             // 
-            this.txtGradoOfrecido.Location = new System.Drawing.Point(12, 181);
+            this.txtGradoOfrecido.Location = new System.Drawing.Point(11, 125);
             this.txtGradoOfrecido.Name = "txtGradoOfrecido";
             this.txtGradoOfrecido.Size = new System.Drawing.Size(100, 20);
             this.txtGradoOfrecido.TabIndex = 16;
             // 
             // txtCompañiaCalle
             // 
-            this.txtCompañiaCalle.Location = new System.Drawing.Point(12, 220);
+            this.txtCompañiaCalle.Location = new System.Drawing.Point(143, 125);
             this.txtCompañiaCalle.Name = "txtCompañiaCalle";
             this.txtCompañiaCalle.Size = new System.Drawing.Size(100, 20);
             this.txtCompañiaCalle.TabIndex = 17;
             // 
             // txtCiudad
             // 
-            this.txtCiudad.Location = new System.Drawing.Point(12, 259);
+            this.txtCiudad.Location = new System.Drawing.Point(140, 176);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(100, 20);
             this.txtCiudad.TabIndex = 18;
             // 
             // txtState
             // 
-            this.txtState.Location = new System.Drawing.Point(11, 298);
+            this.txtState.Location = new System.Drawing.Point(8, 176);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(100, 20);
             this.txtState.TabIndex = 19;
             // 
             // txtLineaDeCalle2
             // 
-            this.txtLineaDeCalle2.Location = new System.Drawing.Point(12, 337);
+            this.txtLineaDeCalle2.Location = new System.Drawing.Point(143, 223);
             this.txtLineaDeCalle2.Name = "txtLineaDeCalle2";
             this.txtLineaDeCalle2.Size = new System.Drawing.Size(100, 20);
             this.txtLineaDeCalle2.TabIndex = 20;
             // 
             // txtCodigoPostal
             // 
-            this.txtCodigoPostal.Location = new System.Drawing.Point(15, 376);
+            this.txtCodigoPostal.Location = new System.Drawing.Point(8, 223);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoPostal.TabIndex = 21;
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(12, 415);
+            this.txtEstado.Location = new System.Drawing.Point(143, 268);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(100, 20);
             this.txtEstado.TabIndex = 22;
             // 
             // txtLineaDeCalle3
             // 
-            this.txtLineaDeCalle3.Location = new System.Drawing.Point(11, 454);
+            this.txtLineaDeCalle3.Location = new System.Drawing.Point(8, 268);
             this.txtLineaDeCalle3.Name = "txtLineaDeCalle3";
             this.txtLineaDeCalle3.Size = new System.Drawing.Size(100, 20);
             this.txtLineaDeCalle3.TabIndex = 23;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(12, 493);
+            this.btnCancelar.Location = new System.Drawing.Point(8, 301);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 23);
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtAceptar
+            // btnGuardarCambios
             // 
-            this.txtAceptar.Location = new System.Drawing.Point(12, 533);
-            this.txtAceptar.Name = "txtAceptar";
-            this.txtAceptar.Size = new System.Drawing.Size(99, 23);
-            this.txtAceptar.TabIndex = 25;
-            this.txtAceptar.Text = "Aceptar";
-            this.txtAceptar.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Location = new System.Drawing.Point(144, 301);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(99, 23);
+            this.btnGuardarCambios.TabIndex = 25;
+            this.btnGuardarCambios.Text = "Guardar Cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.txtGuardarCambios_Click);
             // 
             // FrmAgregarEditarInstituciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(131, 585);
-            this.Controls.Add(this.txtAceptar);
+            this.ClientSize = new System.Drawing.Size(261, 326);
+            this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtLineaDeCalle3);
             this.Controls.Add(this.txtEstado);
@@ -299,6 +301,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAgregarEditarInstituciones";
             this.Text = "Agregar Editar Instituciones";
+            this.Load += new System.EventHandler(this.FrmAgregarEditarInstituciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +334,6 @@
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtLineaDeCalle3;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button txtAceptar;
+        private System.Windows.Forms.Button btnGuardarCambios;
     }
 }

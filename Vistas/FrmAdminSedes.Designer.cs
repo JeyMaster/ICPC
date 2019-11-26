@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvSedes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSedes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(8, 99);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(102, 23);
-            this.btnEliminar.TabIndex = 9;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -62,6 +52,7 @@
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -71,6 +62,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvSedes
             // 
@@ -79,13 +71,13 @@
             this.dgvSedes.Name = "dgvSedes";
             this.dgvSedes.Size = new System.Drawing.Size(677, 437);
             this.dgvSedes.TabIndex = 5;
+            this.dgvSedes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSedes_CellClick);
             // 
             // FrmAdminSedes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -93,6 +85,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAdminSedes";
             this.Text = "FrmAdminSedes";
+            this.Load += new System.EventHandler(this.FrmAdminSedes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSedes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,8 +93,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
