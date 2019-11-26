@@ -31,6 +31,14 @@ namespace Vistas
 				new DaoRegion().INSERT(reg);
 				this.Close();
 			}
+			else
+			{
+				Modelo.Region reg = new Modelo.Region();
+				reg.Nombre = txtNombre.Text;
+				reg.IdRegion = region.IdRegion;
+				new DaoRegion().UPDATE(reg);
+				this.Close();
+			}
 		}
 	}
 }
