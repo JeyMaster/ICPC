@@ -133,8 +133,8 @@ namespace DAOS
 				String strComm = "EditarRegiones";
 				MySqlCommand cmd = new MySqlCommand(strComm, conn);
 				cmd.CommandType = CommandType.StoredProcedure;
-				cmd.Parameters.AddWithValue("Id_Region", objRegion.Nombre);
-				cmd.Parameters.AddWithValue("nombre_region", objRegion.IdRegion);
+				cmd.Parameters.AddWithValue("Id_Region", objRegion.IdRegion);
+				cmd.Parameters.AddWithValue("nombre_region", objRegion.Nombre);
 				cmd.ExecuteNonQuery();
 
 				done = true;
