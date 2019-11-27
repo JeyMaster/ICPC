@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAOS;
 
 namespace Vistas
 {
@@ -17,10 +18,74 @@ namespace Vistas
             InitializeComponent();
         }
 
+		private int year = 1999;
+		private int index;
+
 		private void cargarconcursos()
 		{
 
 		}
 
-    }
+		private void FrmEquiposMiembro_Load(object sender, EventArgs e)
+		{
+			int limite =DateTime.Now.Year;
+
+			for (int i = year; i <= limite; i++)
+			{
+				cboAnio.Items.Add(i);
+			}
+			cboAnio.SelectedIndex = 0;
+			llenarTabla();
+		}
+
+		private void llenarTabla()
+		{
+			DataSet ds = new Reportes().EQUIPOS_MIEMBRO(FrmLogin.user.Email, year);
+			if (ds!=null)
+			{
+				dgvEquipos.DataSource = ds.Tables[0];
+				dgvEquipos.Columns[4].Visible = false;
+
+			}
+		}
+
+		private void cboAnio_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			year = (int)cboAnio.SelectedItem;
+			llenarTabla();
+		}
+
+		private void btnMostrarIntegrantes_Click(object sender, EventArgs e)
+		{
+
+
+			if (index != 0)
+			{
+				DataSet ds = new Reportes().EQUIPO_MIEMBROS(index);
+				dgvIntegrantes.DataSource = ds.Tables[0];
+				dgvIntegrantes.Visible = true;
+			}
+			else
+			{
+				dgvIntegrantes.Visible = false;
+
+			}
+		}
+
+		private void dgvEquipos_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			dgvIntegrantes.Visible = false;
+			try
+			{
+				index = dgvEquipos.CurrentRow.Index;
+				index = (int)dgvEquipos[4, index].Value;
+				MessageBox.Show("" + index);
+			}
+			catch (Exception ex)
+			{
+				index = 0;
+				Console.WriteLine(ex.ToString());
+			}
+		}
+	}
 }

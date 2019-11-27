@@ -115,6 +115,7 @@
 			// 
 			// pnContenedor
 			// 
+			this.pnContenedor.AutoScroll = true;
 			this.pnContenedor.BackColor = System.Drawing.Color.MidnightBlue;
 			this.pnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnContenedor.Location = new System.Drawing.Point(175, 0);
@@ -131,6 +132,7 @@
 			this.Controls.Add(this.pnContenedor);
 			this.Controls.Add(this.pnMenu);
 			this.Name = "FrmTableroMiembro";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FrmTableroMiembro";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTableroMiembro_FormClosed);
 			this.pnMenu.ResumeLayout(false);
