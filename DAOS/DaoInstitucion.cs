@@ -37,8 +37,8 @@ namespace DAOS
 				cmd.Parameters.AddWithValue("@codigoPostal",objInstitucion.CodigoPostal);
 				cmd.Parameters.AddWithValue("@estado",objInstitucion.Estado);
 				cmd.Parameters.AddWithValue("@lineaDeCalle3",objInstitucion.LineaDeCalle_3);
-
-				cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@idRegion", objInstitucion.IdRegion);
+                cmd.ExecuteNonQuery();
 				done = (int)cmd.LastInsertedId;
 
 			}
@@ -75,7 +75,7 @@ namespace DAOS
 					Institucion objInstitucion = new Institucion();
 
 					objInstitucion.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
-                    
+                    objInstitucion.IdRegion = int.Parse(dr["idRegion"].ToString());
                     objInstitucion.NombreCompleto = dr[1].ToString();
 					objInstitucion.NombreCorto = dr[2].ToString();
 					objInstitucion.PaginaWeb = dr[3].ToString();
@@ -127,7 +127,7 @@ namespace DAOS
 				{
 			
 					objInstitucion.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
-                   
+                    objInstitucion.IdRegion = int.Parse(dr["idRegion"].ToString());
                     objInstitucion.NombreCompleto = dr[1].ToString();
 					objInstitucion.NombreCorto = dr[2].ToString();
 					objInstitucion.PaginaWeb = dr[3].ToString();
@@ -186,7 +186,7 @@ namespace DAOS
 				cmd.Parameters.AddWithValue("@codigoPostal", objInstitucion.CodigoPostal);
 				cmd.Parameters.AddWithValue("@estado", objInstitucion.Estado);
 				cmd.Parameters.AddWithValue("@lineaDeCalle3", objInstitucion.LineaDeCalle_3);
-                
+                cmd.Parameters.AddWithValue("@idRegion", objInstitucion.IdRegion);
 
                 cmd.ExecuteNonQuery();
 
