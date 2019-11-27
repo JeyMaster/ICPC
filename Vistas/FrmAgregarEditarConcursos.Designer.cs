@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIdConcurso = new System.Windows.Forms.TextBox();
-            this.txtIdSede = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -44,6 +44,9 @@
             this.txtInfoFacturacion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
+            this.errPConcurso = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbIdSede = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errPConcurso)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,13 +119,6 @@
             this.txtIdConcurso.Size = new System.Drawing.Size(100, 20);
             this.txtIdConcurso.TabIndex = 7;
             // 
-            // txtIdSede
-            // 
-            this.txtIdSede.Location = new System.Drawing.Point(138, 25);
-            this.txtIdSede.Name = "txtIdSede";
-            this.txtIdSede.Size = new System.Drawing.Size(100, 20);
-            this.txtIdSede.TabIndex = 8;
-            // 
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(15, 73);
@@ -178,11 +174,25 @@
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
+            // errPConcurso
+            // 
+            this.errPConcurso.ContainerControl = this;
+            // 
+            // cbIdSede
+            // 
+            this.cbIdSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIdSede.FormattingEnabled = true;
+            this.cbIdSede.Location = new System.Drawing.Point(138, 25);
+            this.cbIdSede.Name = "cbIdSede";
+            this.cbIdSede.Size = new System.Drawing.Size(121, 21);
+            this.cbIdSede.TabIndex = 16;
+            // 
             // FrmAgregarEditarConcursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 250);
+            this.Controls.Add(this.cbIdSede);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtInfoFacturacion);
@@ -190,7 +200,6 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.txtIdSede);
             this.Controls.Add(this.txtIdConcurso);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -202,6 +211,7 @@
             this.Name = "FrmAgregarEditarConcursos";
             this.Text = "AgregarEditarConcursos";
             this.Load += new System.EventHandler(this.FrmAgregarEditarConcursos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errPConcurso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +227,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtIdConcurso;
-        private System.Windows.Forms.TextBox txtIdSede;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtEmail;
@@ -225,5 +234,7 @@
         private System.Windows.Forms.TextBox txtInfoFacturacion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardarCambios;
+        private System.Windows.Forms.ErrorProvider errPConcurso;
+        private System.Windows.Forms.ComboBox cbIdSede;
     }
 }

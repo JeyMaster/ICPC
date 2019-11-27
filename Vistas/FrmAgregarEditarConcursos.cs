@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using DAOS;
+using System.Text.RegularExpressions;
 
 namespace Vistas
 {
@@ -36,18 +37,19 @@ namespace Vistas
 
         private void FrmAgregarEditarConcursos_Load(object sender, EventArgs e)
         {
+            cargarSedes();
             if (editar)
             {
                 this.Text = "Editar";
-                txtIdConcurso.Text = ConcuroAEditar.IdConcurso.ToString();
-                txtIdSede.Text = ConcuroAEditar.IdSede.ToString();
+               
+                cbIdSede.Text = ConcuroAEditar.IdSede.ToString();
                 txtTitulo.Text = ConcuroAEditar.Titulo;
                 txtNombre.Text = ConcuroAEditar.Nombre;
                 txtEmail.Text = ConcuroAEditar.Email;
                 txtLocacion.Text = ConcuroAEditar.Locacion;
                 txtInfoFacturacion.Text = ConcuroAEditar.InfoFacturacion;
                 txtIdConcurso.Enabled = false;
-                txtIdSede.Enabled = false;
+                cbIdSede.Enabled = false;
             }
             else {
                 this.Text = "Agregar";
@@ -60,43 +62,50 @@ namespace Vistas
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            if (editar)
-            {
-                ConcuroAEditar.Titulo = txtTitulo.Text;
-                ConcuroAEditar.Nombre = txtNombre.Text;
-                ConcuroAEditar.Email = txtEmail.Text;
-                ConcuroAEditar.Locacion = txtLocacion.Text;
-                ConcuroAEditar.InfoFacturacion = txtInfoFacturacion.Text;
+            bool titulo = Validaciones(Strings.Nombres, txtTitulo, "Titulo no valido ");
 
-                bool res = objDaoConcurso.UPDATE(ConcuroAEditar);
-                if (res)
+            if (titulo) {
+                if (editar)
                 {
-                    MessageBox.Show("Concurso Actualizado Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    
+                    ConcuroAEditar.Titulo = txtTitulo.Text;
+                    ConcuroAEditar.Nombre = txtNombre.Text;
+                    ConcuroAEditar.Email = txtEmail.Text;
+                    ConcuroAEditar.Locacion = txtLocacion.Text;
+                    ConcuroAEditar.InfoFacturacion = txtInfoFacturacion.Text;
+                   
+
+                    bool res = objDaoConcurso.UPDATE(ConcuroAEditar);
+                    if (res)
+                    {
+                        MessageBox.Show("Concurso Actualizado Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Actualizar El Concurso", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error Al Actualizar El Concurso", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else {
-                //ConcuroAEditar.IdConcurso = Int32.Parse(txtIdConcurso.Text);
-                ConcuroAAgregar.IdSede = Int32.Parse(txtIdSede.Text);
-                ConcuroAAgregar.Titulo = txtTitulo.Text;
-                ConcuroAAgregar.Nombre = txtNombre.Text;
-                ConcuroAAgregar.Email = txtEmail.Text;
-                ConcuroAAgregar.Locacion = txtLocacion.Text;
-                ConcuroAAgregar.InfoFacturacion = txtInfoFacturacion.Text;
+                    Sede newSede = (Sede)cbIdSede.SelectedItem;
+                    ConcuroAAgregar.IdSede = newSede.IdSede;
+                    ConcuroAAgregar.Titulo = txtTitulo.Text;
+                    ConcuroAAgregar.Nombre = txtNombre.Text;
+                    ConcuroAAgregar.Email = txtEmail.Text;
+                    ConcuroAAgregar.Locacion = txtLocacion.Text;
+                    ConcuroAAgregar.InfoFacturacion = txtInfoFacturacion.Text;
 
-                int res = objDaoConcurso.INSERT(ConcuroAAgregar);
-                if (res!=0)
-                {
-                    MessageBox.Show("Concurso Agregado Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error Al Agregar El Concurso ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    int res = objDaoConcurso.INSERT(ConcuroAAgregar);
+                    if (res != 0)
+                    {
+                        MessageBox.Show("Concurso Agregado Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Agregar El Concurso ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -104,6 +113,33 @@ namespace Vistas
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        Regex automata;
+        private bool Validaciones(String validacion, TextBox txtComponent, String msg)
+        {
+            bool done = false;
+            automata = new Regex(validacion);
+            if (!automata.IsMatch(txtComponent.Text))
+            {
+                errPConcurso.SetError(txtComponent, msg);
+                done = false;
+            }
+            else
+            {
+                errPConcurso.SetError(txtComponent, "");
+                done = true;
+            }
+
+            return done;
+        }
+        private void cargarSedes()
+        {
+            List<Sede> ltsSedes = new DaoSede().SELECT_ALL();
+
+            foreach (Modelo.Sede sede in ltsSedes)
+            {
+                cbIdSede.Items.Add(sede);
+            }
         }
     }
 }
