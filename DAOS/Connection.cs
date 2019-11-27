@@ -11,7 +11,7 @@ namespace DAOS
 
 			try
 			{
-				String connString = "server=192.168.1.69;uid=root;pwd=root;database=regicpc";
+				String connString = "server=localhost;uid=root;pwd=root;database=regicpc";
 				conn = new MySqlConnection(connString);
 				conn.Open();
 			}

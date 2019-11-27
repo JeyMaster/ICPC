@@ -93,17 +93,26 @@ namespace Vistas
 			if (cbSexo.SelectedIndex == 1) sexo = 'F';
 			objMiembro.Sexo = sexo;
 			objMiembro.TallaDeCamisa = (cbTallaDeCamisa.SelectedItem.ToString());
-			if (new DaoMiembro().UPDATE(objMiembro))
+
+			if (!txtNombre.Text.Equals(""))
 			{
-				MessageBox.Show("Datos Actualizados correctamente");
-				limpiarCampos();
-				TraerDatos();
+				if (new DaoMiembro().UPDATE(objMiembro))
+				{
+					MessageBox.Show("Datos Actualizados correctamente");
+					limpiarCampos();
+					TraerDatos();
+				}
+				else
+				{
+					MessageBox.Show("Error al actualizar");
+
+				}
 			}
 			else
 			{
-				MessageBox.Show("Error al actualizar");
-
+				MessageBox.Show("El nombre no puede estar vacio");
 			}
 		}
+
 	}
 }

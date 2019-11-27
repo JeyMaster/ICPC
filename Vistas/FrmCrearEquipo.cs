@@ -120,10 +120,6 @@ namespace Vistas
 
 		}
 
-		private void dgvIntegrantes_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			index=(dgvIntegrantes.CurrentRow.Index);
-		}
 
 		private void cbIntegrante_KeyUp(object sender, KeyEventArgs e)
 		{
@@ -140,8 +136,8 @@ namespace Vistas
 
 		private void btnEditar_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(index+"");
-			ltsDetalleEquipo.ElementAt(index).Email = cbIntegrante.SelectedItem.ToString();
+			
+			ltsDetalleEquipo.ElementAt(index).Email = cbIntegrante.Text.ToString();
 			ltsDetalleEquipo.ElementAt(index).Rol = cbRol.SelectedItem.ToString();
 			dgvIntegrantes.DataSource = null;
 			dgvIntegrantes.DataSource = ltsDetalleEquipo;
@@ -221,7 +217,7 @@ namespace Vistas
 
 									if (new Transacciones().INSERT_FULL_EQUIPO(objEquipo, ltsDetalleEquipo, detalleConcurso))
 									{
-										MessageBox.Show("EXELENT");
+										MessageBox.Show("Equipo registrado con exito");
 									}
 
 								}
@@ -262,6 +258,7 @@ namespace Vistas
 		private void dgvIntegrantes_CellClick_1(object sender, DataGridViewCellEventArgs e)
 		{
 			index = dgvIntegrantes.CurrentRow.Index;
+			cbIntegrante.Text = dgvIntegrantes[0, index].Value.ToString();
 		}
 	}
 }

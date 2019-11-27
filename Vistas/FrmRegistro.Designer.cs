@@ -70,7 +70,7 @@
 			this.txtContraseña.Location = new System.Drawing.Point(60, 352);
 			this.txtContraseña.Name = "txtContraseña";
 			this.txtContraseña.Size = new System.Drawing.Size(286, 26);
-			this.txtContraseña.TabIndex = 2;
+			this.txtContraseña.TabIndex = 3;
 			// 
 			// txtApellido
 			// 
@@ -78,7 +78,7 @@
 			this.txtApellido.Location = new System.Drawing.Point(58, 288);
 			this.txtApellido.Name = "txtApellido";
 			this.txtApellido.Size = new System.Drawing.Size(286, 26);
-			this.txtApellido.TabIndex = 3;
+			this.txtApellido.TabIndex = 2;
 			// 
 			// txtRcontraseña
 			// 
@@ -98,7 +98,7 @@
 			this.btnRegresar.Location = new System.Drawing.Point(60, 514);
 			this.btnRegresar.Name = "btnRegresar";
 			this.btnRegresar.Size = new System.Drawing.Size(286, 33);
-			this.btnRegresar.TabIndex = 5;
+			this.btnRegresar.TabIndex = 6;
 			this.btnRegresar.Text = "Regresar";
 			this.btnRegresar.UseVisualStyleBackColor = true;
 			this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
@@ -113,7 +113,7 @@
 			this.btnRegistrar.Location = new System.Drawing.Point(60, 465);
 			this.btnRegistrar.Name = "btnRegistrar";
 			this.btnRegistrar.Size = new System.Drawing.Size(286, 33);
-			this.btnRegistrar.TabIndex = 6;
+			this.btnRegistrar.TabIndex = 5;
 			this.btnRegistrar.Text = "Registrar";
 			this.btnRegistrar.UseVisualStyleBackColor = true;
 			this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -200,6 +200,7 @@
 			// 
 			// FrmRegistro
 			// 
+			this.AcceptButton = this.btnRegistrar;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
@@ -219,6 +220,7 @@
 			this.Controls.Add(this.txtNombre);
 			this.Controls.Add(this.txtEmail);
 			this.Name = "FrmRegistro";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Registro";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.errPrvRegistro)).EndInit();
