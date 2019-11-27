@@ -39,7 +39,7 @@ namespace Vistas
             {
                 this.Text = "Editar";
                 txtIdInstitucion.Text = institucionAEditar.IdInstitucion.ToString();
-                txtIdRegion.Text = institucionAEditar.IdRegion.ToString();
+              
                 txtNombreCompleto.Text =institucionAEditar.NombreCompleto;
                 txtNombreCorto.Text = institucionAEditar.NombreCorto;
                 txtPaginaWeb.Text = institucionAEditar.PaginaWeb;
@@ -73,7 +73,7 @@ namespace Vistas
         {
             if (editar)
             {
-                institucionAEditar.IdRegion = Int32.Parse(txtIdRegion.Text);
+               
                 institucionAEditar.NombreCompleto = txtNombreCompleto.Text;
                 institucionAEditar.NombreCorto = txtNombreCorto.Text;
                 institucionAEditar.PaginaWeb = txtPaginaWeb.Text;
@@ -99,7 +99,7 @@ namespace Vistas
             }
             else
             {
-                InstitucionAAgregar.IdRegion = Int32.Parse( txtIdRegion.Text);
+                
                 InstitucionAAgregar.NombreCompleto = txtNombreCompleto.Text;
                 InstitucionAAgregar.NombreCorto = txtNombreCorto.Text;
                 InstitucionAAgregar.PaginaWeb = txtPaginaWeb.Text;

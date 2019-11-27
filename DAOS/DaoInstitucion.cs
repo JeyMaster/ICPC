@@ -24,7 +24,7 @@ namespace DAOS
 					"VALUES(@idRegion,@nombreCompleto,@nombreCorto,@paginaWeb,@gradoOfrecido,@companiaCalle," +
 					"@ciudad,@state,@lineaDeCalle2,@codigoPostal,@estado,@lineaDeCalle3)";
 				MySqlCommand cmd = new MySqlCommand(cmdStr,conn);
-                cmd.Parameters.AddWithValue("@idRegion", objInstitucion.IdRegion);
+                
                 cmd.Parameters.AddWithValue("@nombreCompleto",objInstitucion.NombreCompleto);
 				cmd.Parameters.AddWithValue("@nombreCorto",objInstitucion.NombreCorto);
 				cmd.Parameters.AddWithValue("@paginaWeb",objInstitucion.PaginaWeb);
@@ -74,7 +74,7 @@ namespace DAOS
 					Institucion objInstitucion = new Institucion();
 
 					objInstitucion.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
-                    objInstitucion.IdRegion = int.Parse(dr["idRegion"].ToString());
+                    
                     objInstitucion.NombreCompleto = dr[1].ToString();
 					objInstitucion.NombreCorto = dr[2].ToString();
 					objInstitucion.PaginaWeb = dr[3].ToString();
@@ -126,7 +126,7 @@ namespace DAOS
 				{
 			
 					objInstitucion.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
-                    objInstitucion.IdRegion = int.Parse(dr["idRegion"].ToString());
+                   
                     objInstitucion.NombreCompleto = dr[1].ToString();
 					objInstitucion.NombreCorto = dr[2].ToString();
 					objInstitucion.PaginaWeb = dr[3].ToString();
@@ -185,7 +185,7 @@ namespace DAOS
 				cmd.Parameters.AddWithValue("@codigoPostal", objInstitucion.CodigoPostal);
 				cmd.Parameters.AddWithValue("@estado", objInstitucion.Estado);
 				cmd.Parameters.AddWithValue("@lineaDeCalle3", objInstitucion.LineaDeCalle_3);
-                cmd.Parameters.AddWithValue("@idRegion", objInstitucion.IdRegion);
+                
 
                 cmd.ExecuteNonQuery();
 

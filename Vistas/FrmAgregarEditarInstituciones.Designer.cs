@@ -54,8 +54,6 @@
             this.txtLineaDeCalle3 = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtIdRegion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -270,29 +268,11 @@
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.txtGuardarCambios_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 291);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 13);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Id Region:";
-            // 
-            // txtIdRegion
-            // 
-            this.txtIdRegion.Location = new System.Drawing.Point(8, 307);
-            this.txtIdRegion.Name = "txtIdRegion";
-            this.txtIdRegion.Size = new System.Drawing.Size(100, 20);
-            this.txtIdRegion.TabIndex = 27;
-            // 
             // FrmAgregarEditarInstituciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(261, 362);
-            this.Controls.Add(this.txtIdRegion);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtLineaDeCalle3);
@@ -355,7 +335,5 @@
         private System.Windows.Forms.TextBox txtLineaDeCalle3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardarCambios;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtIdRegion;
     }
 }
