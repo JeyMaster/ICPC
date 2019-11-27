@@ -18,6 +18,7 @@ namespace Modelo
 		public String CodigoPostal { get; set; }
 		public String Estado { get; set; }
 		public String LineaDeCalle_3 { get; set; }
+
         public int IdRegion { get; set; }
 
         override

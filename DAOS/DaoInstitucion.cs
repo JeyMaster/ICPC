@@ -23,6 +23,7 @@ namespace DAOS
 					"companiaCalle,ciudad,state,lineaDeCalle2,codigoPostal,estado,lineaDeCalle3) " +
 					"VALUES(@idRegion,@nombreCompleto,@nombreCorto,@paginaWeb,@gradoOfrecido,@companiaCalle," +
 					"@ciudad,@state,@lineaDeCalle2,@codigoPostal,@estado,@lineaDeCalle3)";
+
 				MySqlCommand cmd = new MySqlCommand(cmdStr,conn);
                 cmd.Parameters.AddWithValue("@idRegion", objInstitucion.IdRegion);
                 cmd.Parameters.AddWithValue("@nombreCompleto",objInstitucion.NombreCompleto);
