@@ -34,6 +34,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.cboAnio = new System.Windows.Forms.ComboBox();
 			this.dgvIntegrantes = new System.Windows.Forms.DataGridView();
+			this.lblInte = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvIntegrantes)).BeginInit();
 			this.SuspendLayout();
@@ -51,11 +52,15 @@
 			// 
 			// dgvEquipos
 			// 
+			this.dgvEquipos.AllowUserToAddRows = false;
+			this.dgvEquipos.AllowUserToDeleteRows = false;
 			this.dgvEquipos.BackgroundColor = System.Drawing.Color.BlueViolet;
 			this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvEquipos.GridColor = System.Drawing.Color.BlueViolet;
 			this.dgvEquipos.Location = new System.Drawing.Point(21, 71);
 			this.dgvEquipos.Name = "dgvEquipos";
+			this.dgvEquipos.ReadOnly = true;
+			this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvEquipos.Size = new System.Drawing.Size(676, 319);
 			this.dgvEquipos.TabIndex = 15;
 			this.dgvEquipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipos_CellClick);
@@ -98,12 +103,29 @@
 			// 
 			// dgvIntegrantes
 			// 
+			this.dgvIntegrantes.AllowUserToAddRows = false;
+			this.dgvIntegrantes.AllowUserToDeleteRows = false;
+			this.dgvIntegrantes.BackgroundColor = System.Drawing.Color.BlueViolet;
 			this.dgvIntegrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvIntegrantes.Location = new System.Drawing.Point(21, 482);
+			this.dgvIntegrantes.Location = new System.Drawing.Point(21, 496);
 			this.dgvIntegrantes.Name = "dgvIntegrantes";
-			this.dgvIntegrantes.Size = new System.Drawing.Size(676, 205);
+			this.dgvIntegrantes.ReadOnly = true;
+			this.dgvIntegrantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgvIntegrantes.Size = new System.Drawing.Size(676, 191);
 			this.dgvIntegrantes.TabIndex = 21;
 			this.dgvIntegrantes.Visible = false;
+			// 
+			// lblInte
+			// 
+			this.lblInte.AutoSize = true;
+			this.lblInte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblInte.ForeColor = System.Drawing.Color.White;
+			this.lblInte.Location = new System.Drawing.Point(31, 460);
+			this.lblInte.Name = "lblInte";
+			this.lblInte.Size = new System.Drawing.Size(84, 18);
+			this.lblInte.TabIndex = 22;
+			this.lblInte.Text = "Integrantes";
+			this.lblInte.Visible = false;
 			// 
 			// FrmEquiposMiembro
 			// 
@@ -112,6 +134,7 @@
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(720, 699);
+			this.Controls.Add(this.lblInte);
 			this.Controls.Add(this.dgvIntegrantes);
 			this.Controls.Add(this.cboAnio);
 			this.Controls.Add(this.label2);
@@ -136,5 +159,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.ComboBox cboAnio;
 		private System.Windows.Forms.DataGridView dgvIntegrantes;
+		private System.Windows.Forms.Label lblInte;
 	}
 }

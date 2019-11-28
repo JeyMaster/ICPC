@@ -15,6 +15,7 @@ namespace Vistas
         public FrmTableroMiembro()
         {
             InitializeComponent();
+			lblNombre.Text = "\""+FrmLogin.user.Nombre+"\"";
         }
 
         private void abrirFromHijo(object formhijo) {
@@ -33,12 +34,6 @@ namespace Vistas
             abrirFromHijo(new FrmPerfilMiembro());
         }
 
-        private void FrmTableroMiembro_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-            
-        }
-
         private void btnCrearEquipo_Click(object sender, EventArgs e)
         {
             abrirFromHijo(new FrmCrearEquipo());
@@ -48,5 +43,10 @@ namespace Vistas
         {
             abrirFromHijo(new FrmEquiposMiembro());
         }
-    }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+	}
 }

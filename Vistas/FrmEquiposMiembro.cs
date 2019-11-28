@@ -21,10 +21,6 @@ namespace Vistas
 		private int year = 1999;
 		private int index;
 
-		private void cargarconcursos()
-		{
-
-		}
 
 		private void FrmEquiposMiembro_Load(object sender, EventArgs e)
 		{
@@ -64,9 +60,11 @@ namespace Vistas
 				DataSet ds = new Reportes().EQUIPO_MIEMBROS(index);
 				dgvIntegrantes.DataSource = ds.Tables[0];
 				dgvIntegrantes.Visible = true;
+				lblInte.Visible = true;
 			}
 			else
 			{
+				lblInte.Visible = false;
 				dgvIntegrantes.Visible = false;
 
 			}
@@ -75,6 +73,8 @@ namespace Vistas
 		private void dgvEquipos_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			dgvIntegrantes.Visible = false;
+			lblInte.Visible = false;
+
 			try
 			{
 				index = dgvEquipos.CurrentRow.Index;

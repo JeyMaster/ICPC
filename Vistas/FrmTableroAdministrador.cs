@@ -46,5 +46,25 @@ namespace Vistas
         {
             abrirFromHijo(new FrmAdminInstituciones());
         }
-    }
+
+		private void btnSalir_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btnReporteIntegrante_Click(object sender, EventArgs e)
+		{
+			new FrmReporteEquipoSede().ShowDialog();
+		}
+
+		private void btnReporteRegion_Click(object sender, EventArgs e)
+		{
+			new FrmReporteRegion().ShowDialog();
+		}
+
+		private void btnReporteInstitucion_Click(object sender, EventArgs e)
+		{
+			new FrmReporteUniversidad().ShowDialog();
+		}
+	}
 }
