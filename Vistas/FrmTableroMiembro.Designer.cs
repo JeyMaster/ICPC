@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
 			this.pnMenu = new System.Windows.Forms.Panel();
+			this.lblNombre = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			this.btnAdminEquipos = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnCrearEquipo = new System.Windows.Forms.Button();
 			this.btnPerfil = new System.Windows.Forms.Button();
 			this.pnContenedor = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.lblNombre = new System.Windows.Forms.Label();
 			this.pnMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,21 +55,49 @@
 			this.pnMenu.Size = new System.Drawing.Size(175, 567);
 			this.pnMenu.TabIndex = 0;
 			// 
+			// lblNombre
+			// 
+			this.lblNombre.AutoSize = true;
+			this.lblNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNombre.ForeColor = System.Drawing.Color.White;
+			this.lblNombre.Location = new System.Drawing.Point(24, 69);
+			this.lblNombre.Name = "lblNombre";
+			this.lblNombre.Size = new System.Drawing.Size(54, 19);
+			this.lblNombre.TabIndex = 5;
+			this.lblNombre.Text = "label2";
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.DarkViolet;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.White;
+			this.button1.Location = new System.Drawing.Point(28, 516);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(125, 29);
+			this.button1.TabIndex = 4;
+			this.button1.Text = "Cerrar sesion";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// btnAdminEquipos
 			// 
+			this.btnAdminEquipos.BackColor = System.Drawing.Color.BlueViolet;
 			this.btnAdminEquipos.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
 			this.btnAdminEquipos.FlatAppearance.BorderSize = 0;
 			this.btnAdminEquipos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
 			this.btnAdminEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAdminEquipos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAdminEquipos.ForeColor = System.Drawing.Color.White;
-			this.btnAdminEquipos.Location = new System.Drawing.Point(12, 204);
+			this.btnAdminEquipos.Location = new System.Drawing.Point(0, 198);
 			this.btnAdminEquipos.Name = "btnAdminEquipos";
-			this.btnAdminEquipos.Size = new System.Drawing.Size(163, 37);
+			this.btnAdminEquipos.Size = new System.Drawing.Size(175, 37);
 			this.btnAdminEquipos.TabIndex = 3;
 			this.btnAdminEquipos.Text = "Administrar Equipos        ";
 			this.btnAdminEquipos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAdminEquipos.UseVisualStyleBackColor = true;
+			this.btnAdminEquipos.UseVisualStyleBackColor = false;
 			this.btnAdminEquipos.Click += new System.EventHandler(this.btnAdminEquipos_Click);
 			// 
 			// label1
@@ -85,36 +113,38 @@
 			// 
 			// btnCrearEquipo
 			// 
+			this.btnCrearEquipo.BackColor = System.Drawing.Color.BlueViolet;
 			this.btnCrearEquipo.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
 			this.btnCrearEquipo.FlatAppearance.BorderSize = 0;
 			this.btnCrearEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
 			this.btnCrearEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnCrearEquipo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCrearEquipo.ForeColor = System.Drawing.Color.White;
-			this.btnCrearEquipo.Location = new System.Drawing.Point(3, 161);
+			this.btnCrearEquipo.Location = new System.Drawing.Point(0, 161);
 			this.btnCrearEquipo.Name = "btnCrearEquipo";
-			this.btnCrearEquipo.Size = new System.Drawing.Size(172, 37);
+			this.btnCrearEquipo.Size = new System.Drawing.Size(175, 37);
 			this.btnCrearEquipo.TabIndex = 1;
 			this.btnCrearEquipo.Text = "Crear Equipo  ";
 			this.btnCrearEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnCrearEquipo.UseVisualStyleBackColor = true;
+			this.btnCrearEquipo.UseVisualStyleBackColor = false;
 			this.btnCrearEquipo.Click += new System.EventHandler(this.btnCrearEquipo_Click);
 			// 
 			// btnPerfil
 			// 
+			this.btnPerfil.BackColor = System.Drawing.Color.BlueViolet;
 			this.btnPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
 			this.btnPerfil.FlatAppearance.BorderSize = 0;
 			this.btnPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
 			this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnPerfil.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnPerfil.ForeColor = System.Drawing.Color.White;
-			this.btnPerfil.Location = new System.Drawing.Point(2, 127);
+			this.btnPerfil.Location = new System.Drawing.Point(0, 127);
 			this.btnPerfil.Name = "btnPerfil";
-			this.btnPerfil.Size = new System.Drawing.Size(173, 37);
+			this.btnPerfil.Size = new System.Drawing.Size(175, 37);
 			this.btnPerfil.TabIndex = 0;
 			this.btnPerfil.Text = "Perfil  ";
 			this.btnPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnPerfil.UseVisualStyleBackColor = true;
+			this.btnPerfil.UseVisualStyleBackColor = false;
 			this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
 			// 
 			// pnContenedor
@@ -126,32 +156,6 @@
 			this.pnContenedor.Name = "pnContenedor";
 			this.pnContenedor.Size = new System.Drawing.Size(822, 567);
 			this.pnContenedor.TabIndex = 1;
-			// 
-			// button1
-			// 
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Location = new System.Drawing.Point(28, 516);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(125, 29);
-			this.button1.TabIndex = 4;
-			this.button1.Text = "Cerrar sesion";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// lblNombre
-			// 
-			this.lblNombre.AutoSize = true;
-			this.lblNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNombre.ForeColor = System.Drawing.Color.White;
-			this.lblNombre.Location = new System.Drawing.Point(24, 69);
-			this.lblNombre.Name = "lblNombre";
-			this.lblNombre.Size = new System.Drawing.Size(54, 19);
-			this.lblNombre.TabIndex = 5;
-			this.lblNombre.Text = "label2";
 			// 
 			// FrmTableroMiembro
 			// 

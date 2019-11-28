@@ -57,6 +57,7 @@
 			// 
 			// btnMostrarReporte
 			// 
+			this.btnMostrarReporte.BackColor = System.Drawing.Color.DarkOliveGreen;
 			this.btnMostrarReporte.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnMostrarReporte.FlatAppearance.BorderSize = 0;
 			this.btnMostrarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -68,7 +69,7 @@
 			this.btnMostrarReporte.Size = new System.Drawing.Size(190, 30);
 			this.btnMostrarReporte.TabIndex = 26;
 			this.btnMostrarReporte.Text = "Mostrar reporte";
-			this.btnMostrarReporte.UseVisualStyleBackColor = true;
+			this.btnMostrarReporte.UseVisualStyleBackColor = false;
 			this.btnMostrarReporte.Click += new System.EventHandler(this.btnMostrarReporte_Click);
 			// 
 			// dgvReporte
@@ -87,6 +88,7 @@
 			// 
 			// FrmReporteRegion
 			// 
+			this.AcceptButton = this.btnMostrarReporte;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.SeaGreen;

@@ -75,7 +75,8 @@
 			// 
 			// btnSalir
 			// 
-			this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+			this.btnSalir.BackColor = System.Drawing.Color.DarkOliveGreen;
+			this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
 			this.btnSalir.FlatAppearance.BorderSize = 0;
 			this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
 			this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -86,7 +87,7 @@
 			this.btnSalir.Size = new System.Drawing.Size(105, 37);
 			this.btnSalir.TabIndex = 4;
 			this.btnSalir.Text = "Salir";
-			this.btnSalir.UseVisualStyleBackColor = true;
+			this.btnSalir.UseVisualStyleBackColor = false;
 			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 			// 
 			// label1
@@ -102,57 +103,61 @@
 			// 
 			// btnAdminInstituciones
 			// 
+			this.btnAdminInstituciones.BackColor = System.Drawing.Color.ForestGreen;
 			this.btnAdminInstituciones.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnAdminInstituciones.FlatAppearance.BorderSize = 0;
 			this.btnAdminInstituciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
 			this.btnAdminInstituciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAdminInstituciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAdminInstituciones.ForeColor = System.Drawing.Color.White;
-			this.btnAdminInstituciones.Location = new System.Drawing.Point(8, 230);
+			this.btnAdminInstituciones.Location = new System.Drawing.Point(8, 212);
 			this.btnAdminInstituciones.Name = "btnAdminInstituciones";
 			this.btnAdminInstituciones.Size = new System.Drawing.Size(195, 43);
 			this.btnAdminInstituciones.TabIndex = 3;
 			this.btnAdminInstituciones.Text = "Instituciones  ";
 			this.btnAdminInstituciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAdminInstituciones.UseVisualStyleBackColor = true;
+			this.btnAdminInstituciones.UseVisualStyleBackColor = false;
 			this.btnAdminInstituciones.Click += new System.EventHandler(this.btnAdminInstituciones_Click);
 			// 
 			// btnAdminConcursos
 			// 
+			this.btnAdminConcursos.BackColor = System.Drawing.Color.ForestGreen;
 			this.btnAdminConcursos.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnAdminConcursos.FlatAppearance.BorderSize = 0;
 			this.btnAdminConcursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
 			this.btnAdminConcursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAdminConcursos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAdminConcursos.ForeColor = System.Drawing.Color.White;
-			this.btnAdminConcursos.Location = new System.Drawing.Point(8, 181);
+			this.btnAdminConcursos.Location = new System.Drawing.Point(8, 169);
 			this.btnAdminConcursos.Name = "btnAdminConcursos";
 			this.btnAdminConcursos.Size = new System.Drawing.Size(195, 43);
 			this.btnAdminConcursos.TabIndex = 2;
 			this.btnAdminConcursos.Text = "Concursos  ";
 			this.btnAdminConcursos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAdminConcursos.UseVisualStyleBackColor = true;
+			this.btnAdminConcursos.UseVisualStyleBackColor = false;
 			this.btnAdminConcursos.Click += new System.EventHandler(this.btnAdminConcursos_Click);
 			// 
 			// btnAdminSedes
 			// 
+			this.btnAdminSedes.BackColor = System.Drawing.Color.ForestGreen;
 			this.btnAdminSedes.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnAdminSedes.FlatAppearance.BorderSize = 0;
 			this.btnAdminSedes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
 			this.btnAdminSedes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAdminSedes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAdminSedes.ForeColor = System.Drawing.Color.White;
-			this.btnAdminSedes.Location = new System.Drawing.Point(8, 132);
+			this.btnAdminSedes.Location = new System.Drawing.Point(8, 126);
 			this.btnAdminSedes.Name = "btnAdminSedes";
 			this.btnAdminSedes.Size = new System.Drawing.Size(195, 43);
 			this.btnAdminSedes.TabIndex = 1;
 			this.btnAdminSedes.Text = "Sedes  ";
 			this.btnAdminSedes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAdminSedes.UseVisualStyleBackColor = true;
+			this.btnAdminSedes.UseVisualStyleBackColor = false;
 			this.btnAdminSedes.Click += new System.EventHandler(this.btnAdminSedes_Click);
 			// 
 			// btnAdminRegiones
 			// 
+			this.btnAdminRegiones.BackColor = System.Drawing.Color.ForestGreen;
 			this.btnAdminRegiones.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnAdminRegiones.FlatAppearance.BorderSize = 0;
 			this.btnAdminRegiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -165,7 +170,7 @@
 			this.btnAdminRegiones.TabIndex = 0;
 			this.btnAdminRegiones.Text = "Regiones  ";
 			this.btnAdminRegiones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAdminRegiones.UseVisualStyleBackColor = true;
+			this.btnAdminRegiones.UseVisualStyleBackColor = false;
 			this.btnAdminRegiones.Click += new System.EventHandler(this.btnAdminRegiones_Click);
 			// 
 			// pnContenedor
@@ -192,50 +197,53 @@
 			// 
 			// btnReporteInstitucion
 			// 
+			this.btnReporteInstitucion.BackColor = System.Drawing.Color.MediumSeaGreen;
 			this.btnReporteInstitucion.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnReporteInstitucion.FlatAppearance.BorderSize = 0;
 			this.btnReporteInstitucion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
 			this.btnReporteInstitucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnReporteInstitucion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReporteInstitucion.ForeColor = System.Drawing.Color.White;
-			this.btnReporteInstitucion.Location = new System.Drawing.Point(496, 3);
+			this.btnReporteInstitucion.Location = new System.Drawing.Point(517, 8);
 			this.btnReporteInstitucion.Name = "btnReporteInstitucion";
-			this.btnReporteInstitucion.Size = new System.Drawing.Size(176, 52);
+			this.btnReporteInstitucion.Size = new System.Drawing.Size(176, 43);
 			this.btnReporteInstitucion.TabIndex = 3;
 			this.btnReporteInstitucion.Text = "Por institución";
-			this.btnReporteInstitucion.UseVisualStyleBackColor = true;
+			this.btnReporteInstitucion.UseVisualStyleBackColor = false;
 			this.btnReporteInstitucion.Click += new System.EventHandler(this.btnReporteInstitucion_Click);
 			// 
 			// btnReporteRegion
 			// 
+			this.btnReporteRegion.BackColor = System.Drawing.Color.MediumSeaGreen;
 			this.btnReporteRegion.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnReporteRegion.FlatAppearance.BorderSize = 0;
 			this.btnReporteRegion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
 			this.btnReporteRegion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnReporteRegion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReporteRegion.ForeColor = System.Drawing.Color.White;
-			this.btnReporteRegion.Location = new System.Drawing.Point(314, 3);
+			this.btnReporteRegion.Location = new System.Drawing.Point(327, 8);
 			this.btnReporteRegion.Name = "btnReporteRegion";
-			this.btnReporteRegion.Size = new System.Drawing.Size(159, 52);
+			this.btnReporteRegion.Size = new System.Drawing.Size(159, 43);
 			this.btnReporteRegion.TabIndex = 2;
 			this.btnReporteRegion.Text = "Por region";
-			this.btnReporteRegion.UseVisualStyleBackColor = true;
+			this.btnReporteRegion.UseVisualStyleBackColor = false;
 			this.btnReporteRegion.Click += new System.EventHandler(this.btnReporteRegion_Click);
 			// 
 			// btnReporteIntegrante
 			// 
+			this.btnReporteIntegrante.BackColor = System.Drawing.Color.MediumSeaGreen;
 			this.btnReporteIntegrante.FlatAppearance.BorderColor = System.Drawing.Color.Green;
 			this.btnReporteIntegrante.FlatAppearance.BorderSize = 0;
 			this.btnReporteIntegrante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
 			this.btnReporteIntegrante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnReporteIntegrante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReporteIntegrante.ForeColor = System.Drawing.Color.White;
-			this.btnReporteIntegrante.Location = new System.Drawing.Point(142, 3);
+			this.btnReporteIntegrante.Location = new System.Drawing.Point(142, 8);
 			this.btnReporteIntegrante.Name = "btnReporteIntegrante";
-			this.btnReporteIntegrante.Size = new System.Drawing.Size(147, 52);
+			this.btnReporteIntegrante.Size = new System.Drawing.Size(147, 43);
 			this.btnReporteIntegrante.TabIndex = 1;
 			this.btnReporteIntegrante.Text = "Equipos por sede";
-			this.btnReporteIntegrante.UseVisualStyleBackColor = true;
+			this.btnReporteIntegrante.UseVisualStyleBackColor = false;
 			this.btnReporteIntegrante.Click += new System.EventHandler(this.btnReporteIntegrante_Click);
 			// 
 			// label2

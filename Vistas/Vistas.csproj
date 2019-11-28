@@ -124,6 +124,24 @@
     <Compile Include="FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteEquipoSede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteEquipoSede.Designer.cs">
+      <DependentUpon>FrmReporteEquipoSede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteRegion.Designer.cs">
+      <DependentUpon>FrmReporteRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteUniversidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteUniversidad.Designer.cs">
+      <DependentUpon>FrmReporteUniversidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTableroAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +194,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteEquipoSede.resx">
+      <DependentUpon>FrmReporteEquipoSede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteRegion.resx">
+      <DependentUpon>FrmReporteRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteUniversidad.resx">
+      <DependentUpon>FrmReporteUniversidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTableroAdministrador.resx">
       <DependentUpon>FrmTableroAdministrador.cs</DependentUpon>

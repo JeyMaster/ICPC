@@ -66,6 +66,7 @@ namespace Vistas
 			{
 				lblInte.Visible = false;
 				dgvIntegrantes.Visible = false;
+				MessageBox.Show("Selecione un equipo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 			}
 		}
@@ -79,10 +80,10 @@ namespace Vistas
 			{
 				index = dgvEquipos.CurrentRow.Index;
 				index = (int)dgvEquipos[4, index].Value;
-				MessageBox.Show("" + index);
 			}
 			catch (Exception ex)
 			{
+				
 				index = 0;
 				Console.WriteLine(ex.ToString());
 			}
