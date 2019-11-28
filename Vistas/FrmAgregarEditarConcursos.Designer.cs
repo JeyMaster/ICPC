@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblIdConcurso = new System.Windows.Forms.Label();
+            this.lblIdSede = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,23 +49,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.errPConcurso)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblIdConcurso
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "idConcurso:";
+            this.lblIdConcurso.AutoSize = true;
+            this.lblIdConcurso.Location = new System.Drawing.Point(12, 9);
+            this.lblIdConcurso.Name = "lblIdConcurso";
+            this.lblIdConcurso.Size = new System.Drawing.Size(63, 13);
+            this.lblIdConcurso.TabIndex = 0;
+            this.lblIdConcurso.Text = "idConcurso:";
             // 
-            // label2
+            // lblIdSede
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "idSede:";
+            this.lblIdSede.AutoSize = true;
+            this.lblIdSede.Location = new System.Drawing.Point(135, 9);
+            this.lblIdSede.Name = "lblIdSede";
+            this.lblIdSede.Size = new System.Drawing.Size(43, 13);
+            this.lblIdSede.TabIndex = 1;
+            this.lblIdSede.Text = "idSede:";
             // 
             // label3
             // 
@@ -117,49 +117,49 @@
             this.txtIdConcurso.Location = new System.Drawing.Point(15, 25);
             this.txtIdConcurso.Name = "txtIdConcurso";
             this.txtIdConcurso.Size = new System.Drawing.Size(100, 20);
-            this.txtIdConcurso.TabIndex = 7;
+            this.txtIdConcurso.TabIndex = 1;
             // 
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(15, 73);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(100, 20);
-            this.txtTitulo.TabIndex = 9;
+            this.txtTitulo.TabIndex = 3;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(138, 73);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 10;
+            this.txtNombre.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(16, 123);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtLocacion
             // 
             this.txtLocacion.Location = new System.Drawing.Point(138, 123);
             this.txtLocacion.Name = "txtLocacion";
             this.txtLocacion.Size = new System.Drawing.Size(100, 20);
-            this.txtLocacion.TabIndex = 12;
+            this.txtLocacion.TabIndex = 6;
             // 
             // txtInfoFacturacion
             // 
             this.txtInfoFacturacion.Location = new System.Drawing.Point(16, 175);
             this.txtInfoFacturacion.Name = "txtInfoFacturacion";
             this.txtInfoFacturacion.Size = new System.Drawing.Size(100, 20);
-            this.txtInfoFacturacion.TabIndex = 13;
+            this.txtInfoFacturacion.TabIndex = 7;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(15, 210);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
-            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -169,7 +169,7 @@
             this.btnGuardarCambios.Location = new System.Drawing.Point(138, 210);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(100, 23);
-            this.btnGuardarCambios.TabIndex = 15;
+            this.btnGuardarCambios.TabIndex = 9;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
@@ -185,10 +185,11 @@
             this.cbIdSede.Location = new System.Drawing.Point(138, 25);
             this.cbIdSede.Name = "cbIdSede";
             this.cbIdSede.Size = new System.Drawing.Size(121, 21);
-            this.cbIdSede.TabIndex = 16;
+            this.cbIdSede.TabIndex = 2;
             // 
             // FrmAgregarEditarConcursos
             // 
+            this.AcceptButton = this.btnGuardarCambios;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 250);
@@ -206,8 +207,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblIdSede);
+            this.Controls.Add(this.lblIdConcurso);
             this.Name = "FrmAgregarEditarConcursos";
             this.Text = "AgregarEditarConcursos";
             this.Load += new System.EventHandler(this.FrmAgregarEditarConcursos_Load);
@@ -219,8 +220,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblIdConcurso;
+        private System.Windows.Forms.Label lblIdSede;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

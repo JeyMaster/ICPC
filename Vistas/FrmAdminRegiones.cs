@@ -28,7 +28,8 @@ namespace Vistas
 
 			dgvRegiones.DataSource = null;
 			dgvRegiones.DataSource = ltsregiones;
-		}
+            dgvRegiones.Columns[0].Visible = false;
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
@@ -49,5 +50,10 @@ namespace Vistas
 		{
 			index = dgvRegiones.CurrentRow.Index;
 		}
-	}
+
+        private void FrmAdminRegiones_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

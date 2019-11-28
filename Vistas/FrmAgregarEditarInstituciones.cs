@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using DAOS;
+using System.Text.RegularExpressions;
 
 namespace Vistas
 {
@@ -35,11 +36,12 @@ namespace Vistas
         DaoInstitucion objDaoInstitucion = new DaoInstitucion();
         private void FrmAgregarEditarInstituciones_Load(object sender, EventArgs e)
         {
+            cargarRegiones();
             if (editar)
             {
                 this.Text = "Editar";
-                txtIdInstitucion.Text = institucionAEditar.IdInstitucion.ToString();
-                txtIdRegio.Text = institucionAEditar.IdRegion.ToString();
+                
+
                 txtNombreCompleto.Text =institucionAEditar.NombreCompleto;
                 txtNombreCorto.Text = institucionAEditar.NombreCorto;
                 txtPaginaWeb.Text = institucionAEditar.PaginaWeb;
@@ -52,14 +54,17 @@ namespace Vistas
                 txtLineaDeCalle3.Text = institucionAEditar.LineaDeCalle_3;
                 txtEstado.Text = institucionAEditar.Estado;
 
-                txtIdInstitucion.Enabled = false;
-                
+                txtIdInstitucion.Visible = false;
+                cbIdRegion.Visible = false;
+                lblIdInstitucion.Visible = false;
+                lblIdRegion.Visible = false;
             }
             else
             {
                 this.Text = "Agregar";
                 txtIdInstitucion.Visible = false;
-                label1.Visible = false;
+                lblIdInstitucion.Visible = false;
+                cbIdRegion.SelectedIndex = 0;
             }
         }
 
@@ -68,62 +73,106 @@ namespace Vistas
             this.Close();
         }
 
-       
+
         private void txtGuardarCambios_Click(object sender, EventArgs e)
         {
-            if (editar)
+            bool nombreCompleto = Validaciones(Strings.Nombres, txtNombreCompleto, "Titulo no valido ");
+            bool nombreCorto = Validaciones(Strings.Nombres, txtNombreCorto, "Nombre no valido ");
+            bool paginaWeb = Validaciones(Strings.validarCorreo, txtPaginaWeb, "Email no valido ");
+            bool gradoOfrecido = Validaciones(Strings.Nombres, txtGradoOfrecido, "Locacion no valida ");
+            bool companiaCalle = Validaciones(Strings.Nombres, txtCompañiaCalle, "Informacion De Facturacion no valida ");
+            bool state = Validaciones(Strings.Nombres, txtState, "Titulo no valido ");
+            bool ciudad = Validaciones(Strings.Nombres, txtCiudad, "Nombre no valido ");
+            bool codigoPostal = Validaciones(Strings.validarCorreo, txtCodigoPostal, "Email no valido ");
+            bool lineaDeCalle2 = Validaciones(Strings.Nombres, txtLineaDeCalle2, "Locacion no valida ");
+            bool lineaDeCalle3 = Validaciones(Strings.Nombres, txtLineaDeCalle3, "Informacion De Facturacion no valida ");
+            bool estado = Validaciones(Strings.Nombres, txtEstado, "Titulo no valido ");
+            
+
+            if (nombreCompleto & nombreCorto & paginaWeb & gradoOfrecido & companiaCalle & state & ciudad & codigoPostal & lineaDeCalle2 & lineaDeCalle3 & estado)
             {
-                institucionAEditar.IdRegion = Int32.Parse(txtIdRegio.Text);
-
-                institucionAEditar.NombreCompleto = txtNombreCompleto.Text;
-                institucionAEditar.NombreCorto = txtNombreCorto.Text;
-                institucionAEditar.PaginaWeb = txtPaginaWeb.Text;
-                institucionAEditar.GradoOfrecido = txtGradoOfrecido.Text;
-                institucionAEditar.CompaniaCalle = txtCompañiaCalle.Text;
-                institucionAEditar.State = txtState.Text;
-                institucionAEditar.Ciudad = txtCiudad.Text;
-                institucionAEditar.CodigoPostal = txtCodigoPostal.Text;
-                institucionAEditar.LineaDeCalle_2 = txtLineaDeCalle2.Text;
-                institucionAEditar.LineaDeCalle_3 = txtLineaDeCalle3.Text;
-                institucionAEditar.Estado = txtEstado.Text;
-
-                bool res = objDaoInstitucion.UPDATE(institucionAEditar);
-                if (res)
+                if (editar)
                 {
-                    MessageBox.Show("Institucion Actualizada Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+
+
+                    institucionAEditar.NombreCompleto = txtNombreCompleto.Text;
+                    institucionAEditar.NombreCorto = txtNombreCorto.Text;
+                    institucionAEditar.PaginaWeb = txtPaginaWeb.Text;
+                    institucionAEditar.GradoOfrecido = txtGradoOfrecido.Text;
+                    institucionAEditar.CompaniaCalle = txtCompañiaCalle.Text;
+                    institucionAEditar.State = txtState.Text;
+                    institucionAEditar.Ciudad = txtCiudad.Text;
+                    institucionAEditar.CodigoPostal = txtCodigoPostal.Text;
+                    institucionAEditar.LineaDeCalle_2 = txtLineaDeCalle2.Text;
+                    institucionAEditar.LineaDeCalle_3 = txtLineaDeCalle3.Text;
+                    institucionAEditar.Estado = txtEstado.Text;
+
+                    bool res = objDaoInstitucion.UPDATE(institucionAEditar);
+                    if (res)
+                    {
+                        MessageBox.Show("Institucion Actualizada Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Actualizar La Institucion", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error Al Actualizar La Institucion", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Modelo.Region newRegion = (Modelo.Region)cbIdRegion.SelectedItem;
+                    InstitucionAAgregar.IdRegion = newRegion.IdRegion;
+
+                    InstitucionAAgregar.NombreCompleto = txtNombreCompleto.Text;
+                    InstitucionAAgregar.NombreCorto = txtNombreCorto.Text;
+                    InstitucionAAgregar.PaginaWeb = txtPaginaWeb.Text;
+                    InstitucionAAgregar.GradoOfrecido = txtGradoOfrecido.Text;
+                    InstitucionAAgregar.CompaniaCalle = txtCompañiaCalle.Text;
+                    InstitucionAAgregar.State = txtState.Text;
+                    InstitucionAAgregar.Ciudad = txtCiudad.Text;
+                    InstitucionAAgregar.CodigoPostal = txtCodigoPostal.Text;
+                    InstitucionAAgregar.LineaDeCalle_2 = txtLineaDeCalle2.Text;
+                    InstitucionAAgregar.LineaDeCalle_3 = txtLineaDeCalle3.Text;
+                    InstitucionAAgregar.Estado = txtEstado.Text;
+
+                    int res = objDaoInstitucion.INSERT(InstitucionAAgregar);
+                    if (res != 0)
+                    {
+                        MessageBox.Show("Institucion Agregada Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Agregar La Institucion ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+            }
+        }
+        Regex automata;
+        private bool Validaciones(String validacion, TextBox txtComponent, String msg)
+        {
+            bool done = false;
+            automata = new Regex(validacion);
+            if (!automata.IsMatch(txtComponent.Text))
+            {
+                errPInstituciones.SetError(txtComponent, msg);
+                done = false;
             }
             else
             {
-                InstitucionAAgregar.IdRegion = Int32.Parse( txtIdRegio.Text);
+                errPInstituciones.SetError(txtComponent, "");
+                done = true;
+            }
 
-                InstitucionAAgregar.NombreCompleto = txtNombreCompleto.Text;
-                InstitucionAAgregar.NombreCorto = txtNombreCorto.Text;
-                InstitucionAAgregar.PaginaWeb = txtPaginaWeb.Text;
-                InstitucionAAgregar.GradoOfrecido = txtGradoOfrecido.Text;
-                InstitucionAAgregar.CompaniaCalle = txtCompañiaCalle.Text;
-                InstitucionAAgregar.State = txtState.Text;
-                InstitucionAAgregar.Ciudad = txtCiudad.Text;
-                InstitucionAAgregar.CodigoPostal = txtCodigoPostal.Text;
-                InstitucionAAgregar.LineaDeCalle_2 = txtLineaDeCalle2.Text;
-                InstitucionAAgregar.LineaDeCalle_3 = txtLineaDeCalle3.Text;
-                InstitucionAAgregar.Estado = txtEstado.Text;
+            return done;
+        }
+        private void cargarRegiones()
+        {
+            List<Modelo.Region> ltsRegiones = new DaoRegion().SELECT();
 
-                int res = objDaoInstitucion.INSERT(InstitucionAAgregar);
-                if (res != 0)
-                {
-                    MessageBox.Show("Institucion Agregada Exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error Al Agregar La Institucion ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            foreach (Modelo.Region region in ltsRegiones)
+            {
+                cbIdRegion.Items.Add(region);
             }
         }
     }

@@ -7,7 +7,9 @@ namespace Modelo
 	public class Institucion
 	{
 		public int IdInstitucion { get; set; }
-		public String NombreCompleto { get; set; }
+        public int IdRegion { get; set; }
+        public String NombreRegion { get; set; }
+        public String NombreCompleto { get; set; }
 		public String NombreCorto { get; set; }
 		public String PaginaWeb { get; set; }
 		public String GradoOfrecido { get; set; }
@@ -19,7 +21,7 @@ namespace Modelo
 		public String Estado { get; set; }
 		public String LineaDeCalle_3 { get; set; }
 
-        public int IdRegion { get; set; }
+        
 
         override
 		public string ToString()

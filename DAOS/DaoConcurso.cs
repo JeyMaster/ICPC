@@ -8,6 +8,46 @@ namespace DAOS
 {
 	public class DaoConcurso
 	{
+        public List<Concurso> SELECT_ALL_JOIN()
+        {
+            List<Concurso> ltsConcursos = null;
+            MySqlConnection conn = Connection.Conn();
+
+            try
+            {
+                String cmdStr = "select c.idConcurso,c.idSede as CidSede,s.nombre as Snombre,c.titulo,c.nombre as Cnombre,c.email,c.locacion,c.infoFacturacion " +
+                                "from concursos c join sedes s "+
+                                "where c.idSede = s.idSede";
+                MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                ltsConcursos = new List<Concurso>();
+                while (dr.Read())
+                {
+                    Concurso objConcurso = new Concurso();
+                    objConcurso.IdConcurso = int.Parse(dr["idConcurso"].ToString());
+                    objConcurso.IdSede = int.Parse(dr["CidSede"].ToString());
+                    objConcurso.NombreSede = dr["Snombre"].ToString();
+                    objConcurso.Titulo = dr["titulo"].ToString();
+                    objConcurso.Locacion = dr["locacion"].ToString();
+                    objConcurso.Nombre = dr["Cnombre"].ToString();
+                    objConcurso.InfoFacturacion = dr["infoFacturacion"].ToString();
+                    objConcurso.Email = dr["email"].ToString();
+
+                    ltsConcursos.Add(objConcurso);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                ltsConcursos = null;
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+            return ltsConcursos;
+        }
         /// <summary>
         /// Consulta todos los concursos de la tabla concursos
         /// </summary>

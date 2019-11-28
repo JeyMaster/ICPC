@@ -41,20 +41,22 @@ namespace Vistas
             if (editar)
             {
                 this.Text = "Editar";
-               
-                cbIdSede.Text = ConcuroAEditar.IdSede.ToString();
                 txtTitulo.Text = ConcuroAEditar.Titulo;
                 txtNombre.Text = ConcuroAEditar.Nombre;
                 txtEmail.Text = ConcuroAEditar.Email;
                 txtLocacion.Text = ConcuroAEditar.Locacion;
                 txtInfoFacturacion.Text = ConcuroAEditar.InfoFacturacion;
-                txtIdConcurso.Enabled = false;
-                cbIdSede.Enabled = false;
+                txtIdConcurso.Visible = false;
+                cbIdSede.Visible = false;
+                lblIdConcurso.Visible = false;
+                lblIdSede.Visible = false;
+                
             }
             else {
                 this.Text = "Agregar";
                 txtIdConcurso.Visible = false;
-                label1.Visible = false;
+                lblIdConcurso.Visible = false;
+                cbIdSede.SelectedIndex = 0;
             }
             
 
@@ -63,8 +65,12 @@ namespace Vistas
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             bool titulo = Validaciones(Strings.Nombres, txtTitulo, "Titulo no valido ");
+            bool nombre = Validaciones(Strings.Nombres, txtNombre, "Nombre no valido ");
+            bool email = Validaciones(Strings.validarCorreo, txtEmail, "Email no valido ");
+            bool locacion = Validaciones(Strings.Nombres, txtLocacion, "Locacion no valida ");
+            bool infofacturacion = Validaciones(Strings.Nombres, txtInfoFacturacion, "Informacion De Facturacion no valida ");
 
-            if (titulo) {
+            if (titulo & nombre & email & locacion & infofacturacion) {
                 if (editar)
                 {
                     

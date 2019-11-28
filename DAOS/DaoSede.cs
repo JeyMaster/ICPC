@@ -41,6 +41,43 @@ namespace DAOS
 
 			return done;
 		}
+        public List<Sede> SELECT_ALL_JOIN()
+        {
+            List<Sede> ltsSede = null;
+            MySqlConnection conn = Connection.Conn();
+
+            try
+            {
+                String cmdStr = "select s.idSede,s.nombre as Snombre,s.idRegion,r.Nombre as Rnombre "+
+                                "from Sedes s join regiones r "+
+                                "where s.idRegion = r.idRegion ";
+                MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                ltsSede = new List<Sede>();
+                while (dr.Read())
+                {
+                    Sede objSede = new Sede();
+                    objSede.IdSede = int.Parse(dr["idSede"].ToString());
+                    objSede.IdRegion = int.Parse(dr["idRegion"].ToString());
+                    objSede.Nombre = dr["Snombre"].ToString();
+                    objSede.NombreRegion = dr["Rnombre"].ToString();
+
+
+                    ltsSede.Add(objSede);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                ltsSede = null;
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+            return ltsSede;
+        }
         /// <summary>
         /// Regresa un select de todas las sedes de la base de datos
         /// </summary>

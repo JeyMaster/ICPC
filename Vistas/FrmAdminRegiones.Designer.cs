@@ -28,77 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.dgvRegiones = new System.Windows.Forms.DataGridView();
-			this.btnAgregar = new System.Windows.Forms.Button();
-			this.btnEditar = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.btnEliminar = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.dgvRegiones)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// dgvRegiones
-			// 
-			this.dgvRegiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvRegiones.Location = new System.Drawing.Point(120, 12);
-			this.dgvRegiones.Name = "dgvRegiones";
-			this.dgvRegiones.Size = new System.Drawing.Size(677, 437);
-			this.dgvRegiones.TabIndex = 0;
-			this.dgvRegiones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegiones_CellClick);
-			// 
-			// btnAgregar
-			// 
-			this.btnAgregar.Location = new System.Drawing.Point(12, 46);
-			this.btnAgregar.Name = "btnAgregar";
-			this.btnAgregar.Size = new System.Drawing.Size(102, 23);
-			this.btnAgregar.TabIndex = 1;
-			this.btnAgregar.Text = "Agregar";
-			this.btnAgregar.UseVisualStyleBackColor = true;
-			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-			// 
-			// btnEditar
-			// 
-			this.btnEditar.Location = new System.Drawing.Point(12, 75);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(102, 23);
-			this.btnEditar.TabIndex = 2;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.UseVisualStyleBackColor = true;
-			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(35, 20);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(52, 13);
-			this.label1.TabIndex = 3;
-			this.label1.Text = "Regiones";
-			// 
-			// btnEliminar
-			// 
-			this.btnEliminar.Location = new System.Drawing.Point(12, 104);
-			this.btnEliminar.Name = "btnEliminar";
-			this.btnEliminar.Size = new System.Drawing.Size(102, 23);
-			this.btnEliminar.TabIndex = 4;
-			this.btnEliminar.Text = "Eliminar";
-			this.btnEliminar.UseVisualStyleBackColor = true;
-			// 
-			// FrmAdminRegiones
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.btnEliminar);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.btnEditar);
-			this.Controls.Add(this.btnAgregar);
-			this.Controls.Add(this.dgvRegiones);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "FrmAdminRegiones";
-			this.Text = "FrmAdminRegiones";
-			((System.ComponentModel.ISupportInitialize)(this.dgvRegiones)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.dgvRegiones = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegiones)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvRegiones
+            // 
+            this.dgvRegiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegiones.Location = new System.Drawing.Point(120, 12);
+            this.dgvRegiones.Name = "dgvRegiones";
+            this.dgvRegiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRegiones.Size = new System.Drawing.Size(677, 437);
+            this.dgvRegiones.TabIndex = 0;
+            this.dgvRegiones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegiones_CellClick);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(12, 46);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(102, 23);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(12, 75);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(102, 23);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Regiones";
+            // 
+            // FrmAdminRegiones
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.dgvRegiones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmAdminRegiones";
+            this.Text = "FrmAdminRegiones";
+            this.Load += new System.EventHandler(this.FrmAdminRegiones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegiones)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,6 +99,5 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnEliminar;
     }
 }

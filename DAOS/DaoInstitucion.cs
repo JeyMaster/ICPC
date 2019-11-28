@@ -54,12 +54,59 @@ namespace DAOS
 			}
 			return done;
 		}
+        public List<Institucion> SELECT_ALL_JOIN()
+        {
+            MySqlConnection conn = Connection.Conn();
+            List<Institucion> ltsInstituciones = null;
+            try
+            {
+                String cmdStr = "select i.idInstitucion,i.idRegion,r.nombre as Rnombre,i.nombreCompleto,i.nombreCorto,i.paginaWeb,i.gradoOfrecido,i.companiaCalle,i.ciudad,i.State,i.lineaDeCalle2,i.codigoPostal,i.estado,i.lineaDeCalle3 "+
+                                "from instituciones i join regiones r "+
+                                "where i.idRegion = r.idRegion; ";
+                MySqlCommand cmd = new MySqlCommand(cmdStr, conn);
 
-		/// <summary>
-		/// Consulta las instituciones en la base de datos
-		/// </summary>
-		/// <returns>Una lista de instituciones</returns>
-		public List<Institucion> SELECT()
+                MySqlDataReader dr = cmd.ExecuteReader();
+                ltsInstituciones = new List<Institucion>();
+                while (dr.Read())
+                {
+                    Institucion objInstitucion = new Institucion();
+
+                    objInstitucion.IdInstitucion = int.Parse(dr["idInstitucion"].ToString());
+                    objInstitucion.IdRegion = int.Parse(dr["idRegion"].ToString());
+                    objInstitucion.NombreRegion = dr["Rnombre"].ToString();
+                    objInstitucion.NombreCompleto = dr["nombreCompleto"].ToString();
+                    objInstitucion.NombreCorto = dr["nombreCorto"].ToString();
+                    objInstitucion.PaginaWeb = dr["paginaWeb"].ToString();
+                    objInstitucion.GradoOfrecido = dr["gradoOfrecido"].ToString();
+                    objInstitucion.CompaniaCalle = dr["companiaCalle"].ToString();
+                    objInstitucion.Ciudad = dr["ciudad"].ToString();
+                    objInstitucion.State = dr["State"].ToString();
+                    objInstitucion.LineaDeCalle_2 = dr["lineaDeCalle2"].ToString();
+                    objInstitucion.CodigoPostal = dr["codigoPostal"].ToString();
+                    objInstitucion.Estado = dr["estado"].ToString();
+                    objInstitucion.LineaDeCalle_3 = dr["lineaDeCalle3"].ToString();
+
+                    ltsInstituciones.Add(objInstitucion);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                ltsInstituciones = null;
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+
+            return ltsInstituciones;
+        }
+        /// <summary>
+        /// Consulta las instituciones en la base de datos
+        /// </summary>
+        /// <returns>Una lista de instituciones</returns>
+        public List<Institucion> SELECT()
 		{
 			MySqlConnection conn = Connection.Conn();
 			List<Institucion> ltsInstituciones = null;

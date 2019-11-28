@@ -23,10 +23,13 @@ namespace Vistas
         {
             CargarTabla();
         }
+        bool editIsPossible = false;
         public void CargarTabla()
         {
-            List<Institucion> ltsConcursos = objDaoInstitucion.SELECT();
+            List<Institucion> ltsConcursos = objDaoInstitucion.SELECT_ALL_JOIN();
             dgvInstituciones.DataSource = ltsConcursos;
+            dgvInstituciones.Columns[0].Visible = false;
+            dgvInstituciones.Columns[1].Visible = false;
         }
         String rowclicked;
         String idInstitucionXfila;
@@ -39,13 +42,23 @@ namespace Vistas
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Institucion InstitucionAEditar = objDaoInstitucion. SELECT(Int32.Parse(idInstitucionXfila));
-            new FrmAgregarEditarInstituciones(InstitucionAEditar).ShowDialog();
-            CargarTabla();
+            if (editIsPossible)
+            {
+                Institucion InstitucionAEditar = objDaoInstitucion.SELECT(Int32.Parse(idInstitucionXfila));
+                new FrmAgregarEditarInstituciones(InstitucionAEditar).ShowDialog();
+                CargarTabla();
+                editIsPossible = false;
+            }
+            else
+            {
+                MessageBox.Show("Selecciona Un Elemento de la tabla a Editar ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void dgvInstituciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            editIsPossible = true;
             rowclicked = dgvInstituciones.CurrentCell.RowIndex.ToString();
             idInstitucionXfila = dgvInstituciones.Rows[Int32.Parse(rowclicked)].Cells[0].Value.ToString();
         }

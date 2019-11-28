@@ -70,8 +70,10 @@
             this.dgvConcursos.AllowUserToDeleteRows = false;
             this.dgvConcursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConcursos.Location = new System.Drawing.Point(116, 7);
+            this.dgvConcursos.MultiSelect = false;
             this.dgvConcursos.Name = "dgvConcursos";
             this.dgvConcursos.ReadOnly = true;
+            this.dgvConcursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConcursos.Size = new System.Drawing.Size(635, 437);
             this.dgvConcursos.TabIndex = 10;
             this.dgvConcursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConcursos_CellClick);

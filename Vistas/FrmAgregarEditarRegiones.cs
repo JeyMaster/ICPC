@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using DAOS;
+using System.Text.RegularExpressions;
 
 namespace Vistas
 {
@@ -18,13 +19,27 @@ namespace Vistas
         {
             InitializeComponent();
 			this.region = region;
+            if (region != null) { editar = true; }
+            RegionAEditar = region;
         }
+        public FrmAgregarEditarRegiones() 
+        {
+            InitializeComponent();
+            editar = false;
+            btnAceptar.Text = "Agregar";
+        }
+        bool editar;
+        Modelo.Region RegionAEditar;
+        Modelo.Region RegionAAgregar = new Modelo.Region();
+        DaoRegion objDaoConcurso = new DaoRegion();
 
-		private Modelo.Region region;
+        private Modelo.Region region;
 
 		private void btnAceptar_Click(object sender, EventArgs e)
 		{
-			if (region==null)
+            bool nombre = Validaciones(Strings.Nombres, txtNombre, "Nombre no valido ");
+           if (nombre) { 
+            if (region==null)
 			{
 				Modelo.Region reg = new Modelo.Region();
 				reg.Nombre = txtNombre.Text;
@@ -39,6 +54,46 @@ namespace Vistas
 				new DaoRegion().UPDATE(reg);
 				this.Close();
 			}
-		}
-	}
+            }
+        }
+        Regex automata;
+        private bool Validaciones(String validacion, TextBox txtComponent, String msg)
+        {
+            bool done = false;
+            automata = new Regex(validacion);
+            if (!automata.IsMatch(txtComponent.Text))
+            {
+                errPRegiones.SetError(txtComponent, msg);
+                done = false;
+            }
+            else
+            {
+                errPRegiones.SetError(txtComponent, "");
+                done = true;
+            }
+
+            return done;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmAgregarEditarRegiones_Load(object sender, EventArgs e)
+        {
+            if (editar)
+            {
+                this.Text = "Editar";
+                txtNombre.Text = RegionAEditar.Nombre;
+                
+
+            }
+            else
+            {
+                this.Text = "Agregar";
+            
+            }
+        }
+    }
 }

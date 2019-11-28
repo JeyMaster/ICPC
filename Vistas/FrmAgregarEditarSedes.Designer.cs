@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblIdSede = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblIdRegion = new System.Windows.Forms.Label();
             this.txtIdSede = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtIdRegion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
+            this.cbIdRegion = new System.Windows.Forms.ComboBox();
+            this.errPSedes = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errPSedes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdSede
@@ -59,7 +62,7 @@
             // lblIdRegion
             // 
             this.lblIdRegion.AutoSize = true;
-            this.lblIdRegion.Location = new System.Drawing.Point(143, 9);
+            this.lblIdRegion.Location = new System.Drawing.Point(123, 9);
             this.lblIdRegion.Name = "lblIdRegion";
             this.lblIdRegion.Size = new System.Drawing.Size(56, 13);
             this.lblIdRegion.TabIndex = 2;
@@ -70,28 +73,21 @@
             this.txtIdSede.Location = new System.Drawing.Point(15, 25);
             this.txtIdSede.Name = "txtIdSede";
             this.txtIdSede.Size = new System.Drawing.Size(100, 20);
-            this.txtIdSede.TabIndex = 3;
+            this.txtIdSede.TabIndex = 1;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(15, 67);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(231, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtIdRegion
-            // 
-            this.txtIdRegion.Location = new System.Drawing.Point(146, 25);
-            this.txtIdRegion.Name = "txtIdRegion";
-            this.txtIdRegion.Size = new System.Drawing.Size(100, 20);
-            this.txtIdRegion.TabIndex = 5;
+            this.txtNombre.TabIndex = 3;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(15, 107);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -101,19 +97,33 @@
             this.btnGuardarCambios.Location = new System.Drawing.Point(146, 107);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(100, 23);
-            this.btnGuardarCambios.TabIndex = 7;
+            this.btnGuardarCambios.TabIndex = 5;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
+            // cbIdRegion
+            // 
+            this.cbIdRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIdRegion.FormattingEnabled = true;
+            this.cbIdRegion.Location = new System.Drawing.Point(126, 25);
+            this.cbIdRegion.Name = "cbIdRegion";
+            this.cbIdRegion.Size = new System.Drawing.Size(121, 21);
+            this.cbIdRegion.TabIndex = 2;
+            // 
+            // errPSedes
+            // 
+            this.errPSedes.ContainerControl = this;
+            // 
             // FrmAgregarEditarSedes
             // 
+            this.AcceptButton = this.btnGuardarCambios;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 157);
+            this.Controls.Add(this.cbIdRegion);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtIdRegion);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtIdSede);
             this.Controls.Add(this.lblIdRegion);
@@ -122,6 +132,7 @@
             this.Name = "FrmAgregarEditarSedes";
             this.Text = "Agregar Editar Sedes";
             this.Load += new System.EventHandler(this.FrmAgregarEditarSedes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errPSedes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,8 +145,9 @@
         private System.Windows.Forms.Label lblIdRegion;
         private System.Windows.Forms.TextBox txtIdSede;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtIdRegion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardarCambios;
+        private System.Windows.Forms.ComboBox cbIdRegion;
+        private System.Windows.Forms.ErrorProvider errPSedes;
     }
 }

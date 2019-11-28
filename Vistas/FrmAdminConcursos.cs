@@ -27,24 +27,39 @@ namespace Vistas
         }
         String rowclicked;
         String idConcursoXfila;
+        bool editIsPossible=false;
         private void dgvConcursos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-             rowclicked=dgvConcursos.CurrentCell.RowIndex.ToString();
-            idConcursoXfila= dgvConcursos.Rows[Int32.Parse(rowclicked)].Cells[0].Value.ToString();
-            //MessageBox.Show(idConcursoXfila);
+            editIsPossible = true;
+           
+                rowclicked = dgvConcursos.CurrentCell.RowIndex.ToString();
+                idConcursoXfila = dgvConcursos.Rows[Int32.Parse(rowclicked)].Cells[0].Value.ToString();
+            
+             
+            
 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Concurso concursoAEditar = objDaoConcuro.SELECT(Int32.Parse(idConcursoXfila));
-            new FrmAgregarEditarConcursos(concursoAEditar).ShowDialog();
-            CargarTabla();
+            if (editIsPossible)
+            {
+                Concurso concursoAEditar = objDaoConcuro.SELECT(Int32.Parse(idConcursoXfila));
+                new FrmAgregarEditarConcursos(concursoAEditar).ShowDialog();
+                CargarTabla();
+                editIsPossible = false;
+            }
+            else {
+                MessageBox.Show("Selecciona Un Elemento de la tabla a Editar ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             
         }
         public void CargarTabla() {
-            List<Concurso> ltsConcursos = objDaoConcuro.SELECT_ALL();
+            List<Concurso> ltsConcursos = objDaoConcuro.SELECT_ALL_JOIN();
             dgvConcursos.DataSource = ltsConcursos;
+            dgvConcursos.Columns[0].Visible = false;
+            dgvConcursos.Columns[1].Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
